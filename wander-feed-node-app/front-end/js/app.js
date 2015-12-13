@@ -26,6 +26,10 @@ angular
         url: "/products/:id",
         templateUrl: "show.html"
       })
+      .state('homewares', {
+        url: "/homewares",
+        templateUrl: "homewares.html"
+      })
       .state('about', {
         url: "/about",
         templateUrl: "about.html"

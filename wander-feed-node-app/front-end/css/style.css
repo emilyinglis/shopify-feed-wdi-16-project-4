@@ -1,9 +1,21 @@
+/*full site styling*/
+
 body {
   width: 100%;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
 }
 
+p {
+  line-height: 150%;
+}
+
+a:focus, a:hover {
+  color: #99FF0A;
+}
+
+
+/*top nav*/
 .menu-option-wander {
   font-size: 20px;
   color: black;
@@ -27,13 +39,24 @@ body {
   vertical-align: middle;
 }
 
-
 /*All products*/
 
 #left-nav {
   width: 10px;
 }
 
+.column:last-child, .columns:last-child {
+  float: left;
+}
+
+.medium-6 {
+  width: 100%;
+}
+
+/*
+.small-up-4 .column, .small-up-4 .columns {
+  width: 50%;
+}*/
 
 
 /*ng messaging*/
