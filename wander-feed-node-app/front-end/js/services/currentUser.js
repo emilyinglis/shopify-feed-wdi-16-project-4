@@ -1,23 +1,26 @@
-angular
-  .module('logging')
-  .service('CurrentUser', CurrentUser);
+// Unrequired?
 
-CurrentUser.$inject = ["TokenService"]
-function CurrentUser(TokenService){
+// _________________________________________________________________
+// angular
+//   .module('logging')
+//   .service('CurrentUser', CurrentUser);
 
-  var self  = this;
-  self.user = {} 
+// CurrentUser.$inject = ["TokenService"]
+// function CurrentUser(TokenService){
 
-  self.saveUser = function(user){
-    self.user = user
-  }
+//   var self  = this;
+//   self.user = {} 
 
-  self.getUser = function(){
-    return self.user;
-  }
+//   self.saveUser = function(user){
+//     self.user = user
+//   }
 
-  self.clearUser = function(){
-    return self.user = {};
-  }
+//   self.getUser = function(){
+//     return self.user;
+//   }
 
-}
+//   self.clearUser = function(){
+//     return self.user = {};
+//   }
+
+// }

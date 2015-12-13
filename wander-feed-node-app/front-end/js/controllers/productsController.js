@@ -1,37 +1,32 @@
 angular
-  .module('logging')
-  .controller('ProjectsController', ProjectsController);
+  .module('shopify-feed')
+  .controller('ProductsController', ProductsController);
 
-ProjectsController.$inject = ["Project", "User", "CurrentUser"]
-function ProjectsController(Project, User, CurrentUser){
+ProductsController.$inject = ["Product"]
+
+function ProductsController(Product){
+  
   var self = this;
 
   self.all     = [];
-  self.users   = [];
-  self.project = {}; 
+  self.product = {}; 
 
-  self.getProjects = function(){
-    Project.query(function(data){
+  self.getProducts = function(){
+    Product.query(function(data){
       return self.all = data;
     })
   }
 
-  self.getUsers = function(){
-     User.query(function(data){
-      return self.users = data.users;
-    });
-  }
+  self.getProducts();
 
-  self.add = function(){
-    var project = { project: self.project }
-    Project.save(project, function(data){
-      self.all.push(data);
-      self.project = {};
-    })
-  }
-
-  self.getProjects();
-  self.getUsers();
-
-  console.log(CurrentUser.getUser());
 }
+
+
+// Unrequired
+// self.add = function(){
+//   var product = { product: self.product }
+//   Product.save(product, function(data){
+//     self.all.push(data);
+//     self.product = {};
+//   })
+// }

@@ -26,6 +26,14 @@ angular
         url: "/products/:id",
         templateUrl: "show.html"
       })
+      .state('about', {
+        url: "/about",
+        templateUrl: "about.html"
+      })
+      .state('contact', {
+        url: "/contact",
+        templateUrl: "contact.html"
+      })
 
     $urlRouterProvider.otherwise("/");
   }

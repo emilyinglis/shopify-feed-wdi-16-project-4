@@ -1,31 +1,35 @@
-angular
-  .module('logging')
-  .service('TokenService', TokenService);
+// Unrequired?
 
-TokenService.$inject = ['$window', 'jwtHelper'];
-function TokenService($window, jwtHelper) {
+// _________________________________________________________________
 
-  var self = this;
+// angular
+//   .module('logging')
+//   .service('TokenService', TokenService);
 
-  self.setToken    = setToken;
-  self.getToken    = getToken;
-  self.removeToken = removeToken;
-  self.decodeToken = decodeToken;
+// TokenService.$inject = ['$window', 'jwtHelper'];
+// function TokenService($window, jwtHelper) {
 
-  function setToken(token) {
-    return $window.localStorage.setItem('auth-token', token);
-  }
+//   var self = this;
 
-  function getToken() {
-    return $window.localStorage.getItem('auth-token');
-  }
+//   self.setToken    = setToken;
+//   self.getToken    = getToken;
+//   self.removeToken = removeToken;
+//   self.decodeToken = decodeToken;
 
-  function removeToken() {
-    return $window.localStorage.removeItem('auth-token');
-  }
+//   function setToken(token) {
+//     return $window.localStorage.setItem('auth-token', token);
+//   }
 
-  function decodeToken() {
-    var token = self.getToken();
-    return token ? jwtHelper.decodeToken(token) : {};
-  }
-}
+//   function getToken() {
+//     return $window.localStorage.getItem('auth-token');
+//   }
+
+//   function removeToken() {
+//     return $window.localStorage.removeItem('auth-token');
+//   }
+
+//   function decodeToken() {
+//     var token = self.getToken();
+//     return token ? jwtHelper.decodeToken(token) : {};
+//   }
+// }

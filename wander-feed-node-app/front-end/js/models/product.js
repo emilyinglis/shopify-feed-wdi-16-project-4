@@ -1,12 +1,12 @@
 angular
-  .module('logging')
-  .factory('Project', Project)
+  .module('shopify-feed')
+  .factory('Product', Product)
 
-Project.$inject = ['$resource', 'API']
-function Project($resource, API){
+Product.$inject = ['$resource', 'API']
+function Product($resource, API){
 
   return $resource(
-    API+'/projects/:id', {id: '@id'},
+    API+'/products/:id', {id: '@id'},
     { 'get':       { method: 'GET' },
       'save':      { method: 'POST' },
       'query':     { method: 'GET', isArray: true},
