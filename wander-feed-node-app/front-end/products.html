@@ -1,3 +1,131 @@
-<h1>All Products</h1>
+<!-- <h1>All Products</h1> -->
 
-{{ products.all }}
+<!-- {{ products.all }} -->
+
+<!-- _____________________________________ HERO / SLIDER _________________________________________ -->
+
+
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <ul class="orbit-container">
+   <!--  <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+   <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button> -->
+   <li class="orbit-slide is-active">
+     <img src="./assets/images/hero-clothing.png">
+   </li>
+    <!-- <li class="orbit-slide">
+      <img src="http://placehold.it/2000x750">
+    </li>
+    <li class="orbit-slide">
+      <img src="http://placehold.it/2000x750">
+    </li>
+    <li class="orbit-slide">
+      <img src="http://placehold.it/2000x750">
+    </li> -->
+  </ul>
+</div>
+
+
+<!-- _______________________________________________________________________________________________ -->
+
+
+<br><br>
+
+<div class="row columns">
+  <nav aria-label="You are here:" role="navigation">
+    <ul class="breadcrumbs">
+      <li><a href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
+      <li>
+        <span class="show-for-sr">Current: </span> Clothing
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<br><br>
+
+<div class="row" >
+
+  <!-- CATEGORY FILTERS -->
+  <!-- <div class="medium-6 large-1 columns">
+
+    <h3 id="left-nav">Clothing</h3>
+    <br>
+    <ul>
+      <li><a href="#">All</a></li>
+      <li><a href="#">Tops</a></li>
+      <li><a href="#">Bottoms</a></li>
+      <li><a href="#">Dresses</a></li>
+      <li><a href="#">Coats & Jackets</a></li>
+      <li><a href="#">Acccessories</a></li>
+    </ul>
+  </div> -->
+
+  <!-- HERE WE WANT TO LOOP THROUGH ALL PRODUCTS IN THE DATABASE AND DERIVE THEIR IMAGE, TITLE, PRICE AND SHOW URL THEN RENDER THEM IN THE THUMBNAILS -->
+
+  <div class="medium-6 large-12 columns">
+    <div class="row small-up-4">
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/250x200">
+      </div>
+    </div>
+
+  </div>
+
+</div> <!-- Closing row -->
+
+<br><br>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script>
+  $(document).foundation();
+</script>
+</body>
+</html>
+
+
