@@ -1,6 +1,5 @@
 // Copied from here: https://github.com/typefoo/node-shopify/edit/master/lib/shopify.js
 
-
 module.exports = {
   // function to clone an object
   clone: function(obj) {

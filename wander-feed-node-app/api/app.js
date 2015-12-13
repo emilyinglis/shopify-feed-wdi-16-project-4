@@ -8,7 +8,13 @@ var cookieParser   = require("cookie-parser");
 var methodOverride = require("method-override");
 var app            = express();
 
+
+// Require the Shopify.js. See origin: https://github.com/typefoo/node-shopify/blob/master/test/test.js 
+var shopifyObj = require('../lib/shopify');
+
+// Connect to database
 mongoose.connect(config.database);
+
 
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {

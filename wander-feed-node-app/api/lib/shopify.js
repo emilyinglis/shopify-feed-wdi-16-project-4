@@ -7,11 +7,11 @@ function ShopifyConnect(params) {
     $scope            = this;
 
   var defaults = {
-    shop_name: '',
+    shop_name: 'wander-feed',
     scope: 'read_products,read_content,read_themes,read_customers,read_orders,read_script_tags,read_fulfillments,read_shipping,write_products,write_content,write_themes,write_customers,write_orders,write_script_tags,write_fulfillments,write_shipping',
-    id: '',
-    secret: '',
-    redirect: '',
+    id: '804c38c7e20539c1d5c856675950afae', //think this is the API KEY?
+    secret: '3bb564e42544e31151c79076b7ba84dd',
+    redirect: 'http://localhost:8000/', //was given this example in original - redirect: 'http://localhost:9000/#/oauth'
     access_token: null
   };
   
