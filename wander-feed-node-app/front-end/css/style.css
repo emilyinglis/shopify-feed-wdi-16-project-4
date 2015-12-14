@@ -53,6 +53,13 @@ a:focus, a:hover {
   width: 100%;
 }
 
+.center-cropped {
+  object-fit: cover; /* Do not scale the image */
+  object-position: top; /* Center the image within the element */
+  height: 300px;
+  width: 300px;
+}
+
 /*
 .small-up-4 .column, .small-up-4 .columns {
   width: 50%;

@@ -84,7 +84,7 @@
     <div class="row small-up-4">
 
       <div class="column" ng-repeat="product in products.all">
-        <img class="thumbnail" ng-src="{{product.shopify.image[0].src}}" width="300px">
+        <img class="center-cropped" ng-src="{{product.shopify.image[0].src}}">
         <h5>{{product.shopify.title}}</h5>
         <p>{{product.shopify.body_html}}</p>
         <br>
