@@ -9,49 +9,17 @@ var methodOverride = require("method-override");
 var app            = express();
 
 
-// Require the Shopify.js. See origin: https://github.com/typefoo/node-shopify/blob/master/test/test.js 
-var shopifyObj = require('../lib/shopify');
-
 // Connect to database
-mongoose.connect(config.database);
-
-
-app.use(methodOverride(function(req, res){
-  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-    var method = req.body._method
-    delete req.body._method
-    return method
-  }
-}));
-
-
-// ---------------------
-
-// Do we require the below considering no login?
-
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(cookieParser());
-// app.use(morgan('dev'));
-// app.use(cors());
-// app.use(passport.initialize());
-
-// app.use('/api', expressJWT({ secret: secret })
-//   .unless({
-//     path: [
-//       { url: '/api/login', methods: ['POST'] },
-//       { url: '/api/register', methods: ['POST'] }
-//     ]
-//   }));
-
-// app.use(function (err, req, res, next) {
-//   if (err.name === 'UnauthorizedError') {
-//     return res.status(401).json({message: 'Unauthorized request.'});
-//   }
-//   next();
-// });
+mongoose.connect("mongodb://localhost:27017/shopify-feed"); //previously (config.data) but Movies API had this
 
 var routes = require('./config/routes');
-app.use("/api", routes);
+
+app.use(cors());
+
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(routes);
 
 app.listen(3000);
