@@ -47,6 +47,10 @@ a:focus, a:hover {
 
 /*All products*/
 
+.breadcrumbs a {
+  color: #99FF0A;
+}
+
 #left-nav {
   width: 10px;
 }
