@@ -1,5 +1,7 @@
 var express = require('express'),
-    router  = express.Router();
+    router  = express.Router(),
+    bodyParser     = require('body-parser'),      //added off the back of movies api app
+    methodOverride = require('method-override');  //added off the back of movies api app
 
 var productsController = require('../controllers/productsController');
 
