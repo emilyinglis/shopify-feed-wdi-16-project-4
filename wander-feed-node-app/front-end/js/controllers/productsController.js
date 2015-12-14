@@ -28,7 +28,7 @@ function ProductsController(Product, $http){
       product_type: productData['product_type'],
       vendor: productData['vendor'],
       updated_at: productData['updated_at'],
-      images; productData['images'],                 
+      images: productData['images'],                 
       variant: productData['variants'],   // ???                
       variant_inventory: productData['inventory_quantity'],
       variant_price: productData['price']     
