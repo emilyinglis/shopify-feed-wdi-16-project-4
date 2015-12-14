@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+
 <html ng-app='shopify-feed'>
-<head>
+  <head>
+
   <meta charset="utf-8">
   <title>SHOPIFY FEED</title>
+
   <!-- External Files -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-messages.js"></script>
@@ -20,59 +23,62 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 
-</head>
+  </head>
 
 <!-- ______________________________________________________________________________________________ -->
 
 
-<body ng-controller="ProductsController as products">
+  <body ng-controller="ProductsController as products">
+
+<!-- TESTING OF RENDERING PRODUCT TITLE FOR SHOW PAGE BLOCKER -->
+<!-- <h1>PRODUCT: {{selectedProduct.shopify.title}}</h1> -->
 
   <!-- _____________________________________ TOP NAV _________________________________________ -->
 
-  <div id="top-bar" class="top-bar">
-
-    <div class="row">
-      <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="products">C L O T H I N G</a></li>
-      <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="homewares">H O M E W A R E S</a></li>
-      <li><a class="menu-option-wander" class="menu-text" href="#" ui-sref-active="active" ui-sref="home"><img src="./assets/images/wander-logo.png"/></a></li>
-      <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="about">A B O U T</a></li>
-      <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="contact">C O N T A C T</a></li>
-    </div>  
-  </div>
-
+    <div id="top-bar" class="top-bar">
+      <div class="row">
+        <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="products">C L O T H I N G</a></li>
+        <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="homewares">H O M E W A R E S</a></li>
+        <li><a class="menu-option-wander" class="menu-text" href="#" ui-sref-active="active" ui-sref="home"><img src="./assets/images/wander-logo.png"/></a></li>
+        <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="about">A B O U T</a></li>
+        <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="contact">C O N T A C T</a></li>
+      </div>  
+    </div>
 
   <!-- _____________________________________ UI-VIEW _________________________________________ -->
 
-  <main ui-view></main>
+   <main ui-view></main>
 
   <!-- ______________________________________________________________________________________________ -->
   
-  <div  class="callout large secondary" id="footer" style="margin-bottom: 0px;">
+    <div  class="callout large secondary" id="footer" style="margin-bottom: 0px;">
 
-  <div class="row">
-    <div class="large-4 columns">
-      <h5>W A N D E R</h5>
-      <br>
-      <p>A contemporary marketplace for emerging fashion and homewares brands. Want to be part of this movement? Get in touch today.</p>
+    <div class="row">
+
+      <div class="large-4 columns">
+          <h5>W A N D E R</h5>
+          <br>
+          <p>A contemporary marketplace for emerging fashion and homewares brands. Want to be part of this movement? Get in touch today.</p>
+        </div>
+
+        <div class="large-3 large-offset-2 columns" style="float: right;">
+          <ul class="menu vertical">
+            <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="products">C L O T H I N G</a></li>
+            <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="homewares">H O M E W A R E S</a></li>
+            <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="about">A B O U T</a></li>
+            <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="contact">C O N T A C T</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="large-3 large-offset-2 columns" style="float: right;">
-      <ul class="menu vertical">
-        <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="products">C L O T H I N G</a></li>
-        <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="homewares">H O M E W A R E S</a></li>
-        <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="about">A B O U T</a></li>
-        <li><a class="menu-text" href="#" ui-sref-active="active" ui-sref="contact">C O N T A C T</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script>
-  $(document).foundation();
-</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
 
 
-</body>
+  </body>
 </html>

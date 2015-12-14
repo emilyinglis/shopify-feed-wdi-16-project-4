@@ -1,36 +1,7 @@
-<div ng-repeat="product in products.all" ng-view="selectProduct({ id: product.shopify.id })">
-
-{{ product.shopify.({ id })}}
-</div>
-
-<!-- ________________________________PLAYING WITH SHOPIFY VALUES________________________________  -->
-
-
-<!-- Loop through products and render title and price -->
-
-<!-- <div class="column" ng-repeat="product in products.all">
-
-  <img class="center-cropped" ng-src="{{product.shopify.image[0].src}}">
-  <h5 id="title-container">{{product.shopify.title}}</h5>
-  <form name="myForm">
-      <label for="singleSelect"> Single select: </label><br>
-      <select name="singleSelect" ng-model="data.singleSelect">
-        <option value="">---Please select---</option>
-        <option>{{product.shopify.variants[0].title}} - {{product.shopify.variants[0].inventory_quantity}}</option>
-        <option value="{{product.shopify.variants[1].title}}">{{product.shopify.variants[1].title}} - {{product.shopify.variants[0].inventory_quantity}}</option>
-        <option value="{{product.shopify.variants[2].title}}">{{product.shopify.variants[2].title}} - {{product.shopify.variants[0].inventory_quantity}}</option>
-      </select>
-    </form>
-  <br>
-
-</div> -->
-
-
-<!-- ________________________________FRAMEWORK________________________________  -->
-
 <head>
   <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
+
 <body>
 
 
@@ -42,7 +13,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">Clothing</a></li>
         <li>
-          <span class="show-for-sr">Current: </span> Product Title <!-- HOW TO PULL IN ID? USE CLICK EVENT TO PASS THROUGH? -->
+          <span class="show-for-sr">Current: </span>Product Title <!-- HOW TO PULL IN ID? USE CLICK EVENT TO PASS THROUGH? -->
         </li>
       </ul>
     </nav>
@@ -68,6 +39,7 @@
       </div>
     </div>
     <div class="medium-6 large-5 columns">
+     <!--  <h1>{{ products.selectedProduct.shopify.title}}</h1> -->
       <h3>Product Title</h3>
       <p>Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in.</p>
       <label>Size
@@ -94,7 +66,7 @@
       </div>
     </div>
   </div>
-  <div class="column row">
+
 
     <br><br>
 
@@ -104,4 +76,4 @@
       $(document).foundation();
     </script>
   </body>
-  </html>
+

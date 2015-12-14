@@ -8,8 +8,10 @@ function Product($resource){
 
   var ProductResource = $resource('http://localhost:3000/products/:id',
     {id: '@_id'},
-    {'update': { method:'PUT' }}
-    );
+    { 'update': { method:'PUT' },
+      'get':    { method: 'GET' }
+    }
+  );
   
   return ProductResource;
 }

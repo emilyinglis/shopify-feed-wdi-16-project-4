@@ -8,27 +8,31 @@ function ProductsController(Product, $http){
   
   var self = this;
   self.all = [];
-  self.product = {};
-
+  self.selectedProduct = {};
   self.getProducts = getProducts;
+  self.selectProduct = selectProduct;
+  self.selectedItem = {};
 
-  // INDEX
+  // INDEX / all products
+
   function getProducts(){
     Product.query(function(data){
       return self.all = data;
     });
   }
 
-  // SHOW
-  // function showProduct(){
-  //   Product
-  // }
+  //---> SHOW the selected product
 
-  // Fetch the clicked todo
-  this.selectProduct = function(product) {
-    self.selectedProduct = Product.get({ id: product._id });
+  function selectProduct(product) {
+    self.selectedProduct = product;
+    console.log("SELECTED PRODUCT TITLE " + self.selectedProduct.shopify.title);
   };
 
+  // function showProduct(id, from) {
+  //     self.product = Products.get({ id: product._id }, function(){
+  //         console.log($scope.product);
+  //     });
+  // }
 
   self.getProducts();
 

@@ -1,3 +1,14 @@
+<form action="" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_4Coec84Yk7iZFTuzo0uoBdv4"
+    data-amount="2000"
+    data-name="Demo Site"
+    data-description="2 widgets ($20.00)"
+    data-image="/128x128.png"
+    data-locale="auto">
+  </script>
+</form>
 
 <!-- _____________________________________ HERO / SLIDER _________________________________________ -->
 
@@ -76,12 +87,19 @@
 
     <div class="row small-up-4">
 
+    <div class="column" ng-repeat="product in products.all" ng-click="products.selectProduct(product)">
+      <a href="#" ui-sref-active="active" ui-sref="show({ id: product.shopify.id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
+      <h5 id="title-container">{{product.shopify.title}}</h5>
+      <br>
+      <a href="#" class="button expanded hollow">Add to Bag</a>
+    </div>
+<!-- 
       <div class="column" ng-repeat="product in products.all" ng-click="products.selectProduct(product)">
-        <a href="#" ui-sref-active="active" ui-sref="show({ id: product.shopify.id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
+        <a href="#" ui-sref-active="active" ui-sref="show({ id: product.shopify.title })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
         <h5 id="title-container">{{product.shopify.title}}</h5>
         <br>
-        <!-- <a href="#" class="button expanded hollow">Buy</a> -->
-      </div>
+  
+      </div> -->
 
     </div>
 
