@@ -25,6 +25,7 @@ function ProductsController(Product, $http){
 
   function selectProduct(product) {
     self.selectedProduct = product;
+    console.log(product)
     console.log("SELECTED PRODUCT TITLE " + self.selectedProduct.shopify.title);
   };
 

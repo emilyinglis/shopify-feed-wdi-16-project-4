@@ -5,7 +5,7 @@ angular
 MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
-  
+
     .state('home', {
       url: "/",
       templateUrl: "home.html"
@@ -31,6 +31,10 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     .state('contact', {
       url: "/contact",
       templateUrl: "contact.html"
+    })
+    .state('cart', {
+      url: "/shopping-cart",
+      templateUrl: "cart.html"
     })
 
   $urlRouterProvider.otherwise("/");
