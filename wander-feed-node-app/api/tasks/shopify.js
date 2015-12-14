@@ -12,15 +12,19 @@ request.get(url, function(err, res, body) {
   var products = JSON.parse(body).products;
 
   products.forEach(function(product, index) {
+    
     console.log("Saving/updating: ", product.title);
 
     Product.findOne({ "shopify.id": product.id }, function(err, localProduct) {
       if (err) return console.log(err);
       if (localProduct) {
         return console.log("Update goes here...", localProduct)
+        // WRITE UPDATE CODE HERE
+        // UPDATE INVENTORY WHEN SOLD
       }
 
       var newProduct = new Product();
+
       newProduct.shopify.id              = product.id;
       newProduct.shopify.title           = product.title;
       newProduct.shopify.body_html       = product.body_html;
