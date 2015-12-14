@@ -1,15 +1,8 @@
 angular
   .module('shopify-feed', ['ngResource', 'ui.router'])
-  // Is this the best format for the API we're using?
-  .constant('API', 'http://localhost:3000/api')  
-  .config(MainRouter)
-  // Don't believe this is required:
-  // .config(function($httpProvider){
-  //   $httpProvider.interceptors.push('authInterceptor')
-  // })
 
 
-  MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
+MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   function MainRouter($stateProvider, $urlRouterProvider) {
     $stateProvider
