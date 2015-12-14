@@ -8,7 +8,7 @@ var productsController = require('../controllers/productsController');
 
 router.route('/products')
   .get(productsController.productsIndex)      
-  .post(productsController.productsNew);      
+  .post(productsController.productsCreate);      
 
 
 router.route('/products/:id') 
