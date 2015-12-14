@@ -8,6 +8,7 @@ function ProductsController(Product, $http){
   
   var self = this;
   self.all = [];
+  self.product = {};
 
   self.getProducts = getProducts;
 
@@ -19,6 +20,15 @@ function ProductsController(Product, $http){
   }
 
   // SHOW
+  // function showProduct(){
+  //   Product
+  // }
+
+  // Fetch the clicked todo
+  this.selectProduct = function(product) {
+    self.selectedProduct = Product.get({ id: product._id });
+  };
+
 
   self.getProducts();
 

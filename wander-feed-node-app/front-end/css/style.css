@@ -81,6 +81,14 @@ a:focus, a:hover {
 }​
 
 
+/*Product Show Page*/
+
+.button .large .expanded {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
 
 
 /*ng messaging*/

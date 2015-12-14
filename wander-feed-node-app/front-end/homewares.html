@@ -1,47 +1,4 @@
 
-<!-- Loop through products and render image, title -->
-
-<!-- <div class="column" ng-repeat="product in products.all">
-  <img class="center-cropped" ng-src="{{product.shopify.image[0].src}}">
-  <h5 id="title-container">{{product.shopify.title}}</h5>
-  <br>
-</div> -->
-
-
-<!-- Loop through products and render title and price -->
-
-<div class="column" ng-repeat="product in products.all">
-
-  <img class="center-cropped" ng-src="{{product.shopify.image[0].src}}">
-  <h5 id="title-container">{{product.shopify.title}}</h5>
-  <h5 id="title-container">{{product.shopify.variants[1].title}} | {{product.shopify.variants[0].inventory_quantity}}</h5>
-  <h5 id="title-container">{{product.shopify.variants[1].title}}</h5>
-  <form name="myForm">
-      <label for="singleSelect"> Single select: </label><br>
-      <select name="singleSelect" ng-model="data.singleSelect">
-        <option value="">---Please select---</option>
-        <option>{{product.shopify.variants[0].title}} - {{product.shopify.variants[0].inventory_quantity}}</option>
-        <option value="{{product.shopify.variants[1].title}}">{{product.shopify.variants[1].title}} - {{product.shopify.variants[0].inventory_quantity}}</option>
-        <option value="{{product.shopify.variants[2].title}}">{{product.shopify.variants[2].title}} - {{product.shopify.variants[0].inventory_quantity}}</option>
-      </select>
-    </form>
-  <br>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- _____________________________________ HERO / SLIDER _________________________________________ -->
 
 

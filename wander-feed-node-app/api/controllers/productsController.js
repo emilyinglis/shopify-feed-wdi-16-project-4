@@ -27,8 +27,10 @@ function productsShow(req, res){
   Product.findById({ _id: id }, function(err, product) { 
     if (err) res.status(404).send(err);
     res.status(200).send(product);
-  });
+  }).select('-__v');
 }
+
+
 
 // ------------------------
 

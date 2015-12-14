@@ -23,22 +23,46 @@
 
 <!-- ___________________________________________LISTING PRODUCTS TEST________________________________________ -->
 
+  
 
-<ul>
+<!--   // Delete a Character
+  this.deleteCharacter = function(character){
+    Character.delete({id: character._id});
+    var index = self.characters.indexOf(character);
+    self.characters.splice(index, 1);
+  } -->
+
+  <h1>All Products</h1>
+  <ul>
+    <li ng-repeat="product in products.all" ng-click="products.selectProduct(product)">
+      <a href="/products">{{ product.shopify.title }} - {{ product.shopify.id }} </a> <button ng-click="products.deleteProduct(product)">Delete</button>
+    </li>
+  </ul>
+
+<!-- 
+  <h1>The Lightsaber Database</h1>
+  <ul>
+    <li ng-repeat="character in main.characters" ng-click="main.selectCharacter(character)">
+      {{ character.name }}'s lightsaber is <span class="{{ character.lightsaber | lowercase }}">{{ character.lightsaber }}</span> <a href="#" ng-click="main.editCharacter(character)">Edit</a> <button ng-click="main.deleteCharacter(character)">Delete</button>
+    </li>
+  </ul> -->
+
+
+<!-- <ul>
   <li ng-repeat="product in products.all">
     <div><img ng-src="{{product.shopify.image[0].src}}"></div>
     <div>
       <div>
         <h3>{{product.shopify.title}}</h3>
         <p class="bold">{{product.shopify.body_html}}</p>
-        <!-- <p class="italic">{{product["vendor"]}}</p>
+        <p class="italic">{{product["vendor"]}}</p>
         <p><span class="bold">Type:</span> <span class="italic">{{product["product_type"]}}</span></p>
         <p><span class="bold">Price:</span> <span class="italic">{{movie["variant_price"]}}</span></p>
-        <button ng-click="products.deleteProduct(producy)">Delete Product</button> -->
+        <button ng-click="products.deleteProduct(producy)">Delete Product</button>
       </div>
     </div>
   </li>
-</ul>
+</ul> -->
 
 
 <!-- NOTES -->
