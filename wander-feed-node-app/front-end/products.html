@@ -85,10 +85,9 @@
 
       <div class="column" ng-repeat="product in products.all">
         <img class="center-cropped" ng-src="{{product.shopify.image[0].src}}">
-        <h5>{{product.shopify.title}}</h5>
-        <p>{{product.shopify.body_html}}</p>
+        <h5 id="title-container">{{product.shopify.title}}</h5>
         <br>
-        <a href="#" class="button expanded hollow">Buy</a>
+        <!-- <a href="#" class="button expanded hollow">Buy</a> -->
       </div>
 
     </div>
