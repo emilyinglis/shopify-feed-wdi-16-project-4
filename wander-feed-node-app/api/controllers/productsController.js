@@ -31,7 +31,6 @@ function productsShow(req, res){
 }
 
 
-
 // ------------------------
 
 function productsDelete(req, res){

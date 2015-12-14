@@ -16,7 +16,8 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     })
     .state('show', {
       url: "/products/:id",
-      templateUrl: "show.html"
+      templateUrl: "show.html",
+      controller: "ProductsController as products"
     })
     .state('homewares', {
       url: "/homewares",
