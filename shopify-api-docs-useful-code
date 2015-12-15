@@ -1,0 +1,57 @@
+From Shopify documentation: https://docs.shopify.com/api/product_variant#update
+
+  ---> UPDATING A PRODUCT'S VARIANT INVENTORY:
+
+  https://docs.shopify.com/api/product_variant#count
+
+
+  Update a variant's inventory using an adjustment
+    
+  ________________________________________________
+
+    PUT /admin/variants/#{id}.json
+    {
+      "variant": {
+        "id": 808950810,                            ---> product_id
+        "inventory_quantity_adjustment": -5
+      }
+  }
+
+  Example: /admin/variants/808950810.json
+
+  ________________________________________________
+
+
+  ---> COUNT ALL VARIANTS OF A PRODUCT
+
+  Count all variants for a product
+
+  GET /admin/products/#{id}/variants/count.json
+
+
+
+  Example: /admin/products/632910392/variants/count.json
+
+  ________________________________________________
+  
+
+  ---> GET ALL VARIANTS FOR A PRODUCT
+
+  GET /admin/products/#{id}/variants.json
+
+  Example: /admin/products/632910392/variants.json
+
+  ________________________________________________
+
+
+  ATTENTION - NOTE
+
+  old_inventory_quantity
+  { "old_inventory_quantity" : 5 }
+  The original stock level the client believes the product variant has. This should be sent to avoid a race condition when the item being adjusted is simultaneously sold online.
+
+  inventory_quantity_adjustment
+  { "inventory_quantity_adjustment" : 5 }
+  Instead of sending a new and old value for inventory an adjustment value can be sent. If an adjustment value is sent it will take priority.
+
+

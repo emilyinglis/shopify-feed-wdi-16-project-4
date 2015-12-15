@@ -1,0 +1,76 @@
+From here:
+
+view-source:http://www.attpynta.com/collections/1-christmas-decorations/products/diamond-cage-ornament?variant=10193129859
+
+<script>
+  var selectCallback = function(variant, selector) {
+
+    var $addToCart = $('#addToCart'),
+        $productPrice = $('#productPrice'),
+        $comparePrice = $('#comparePrice'),
+        $quantityElements = $('.quantity-selector, label + .js-qty'),
+        $addToCartText = $('#addToCartText'),
+        $featuredImage = $('#productPhotoImg');
+
+    if (variant) {
+
+      // Update variant image, if one is set
+      // Call timber.switchImage function in shop.js
+      if (variant.featured_image) {
+        var newImg = variant.featured_image,
+            el = $featuredImage[0];
+        Shopify.Image.switchImage(newImg, el, timber.switchImage);
+      }
+
+      // Select a valid variant if available
+      if (variant.available) {
+        // We have a valid product variant, so enable the submit button
+        $addToCart.removeClass('disabled').prop('disabled', false);
+        $addToCartText.text('Add to Basket');
+        $quantityElements.show();
+      } else {
+        // Variant is sold out, disable the submit button
+        $addToCart.addClass('disabled').prop('disabled', true);
+        $addToCartText.text('Sold Out');
+        $quantityElements.hide();
+      }
+
+      // Regardless of stock, update the product price
+      $productPrice.html( Shopify.formatMoney(variant.price, "&pound;{{amount}}") );
+
+      // Also update and show the product's compare price if necessary
+      if ( variant.compare_at_price > variant.price ) {
+        $comparePrice
+          .html('Compare at: ' + Shopify.formatMoney(variant.compare_at_price, "&pound;{{amount}}"))
+          .show();
+      } else {
+        $comparePrice.hide();
+      }
+
+    } else {
+      // The variant doesn't exist, disable submit button.
+      // This may be an error or notice that a specific variant is not available.
+      // To only show available variants, implement linked product options:
+      //   - http://docs.shopify.com/manual/configuration/store-customization/advanced-navigation/linked-product-options
+      $addToCart.addClass('disabled').prop('disabled', true);
+      $addToCartText.text('Unavailable');
+      $quantityElements.hide();
+    }
+  };
+
+  jQuery(function($) {
+    new Shopify.OptionSelectors('productSelect', {
+      product: {"id":3496142467,"title":"Diamond Cage Ornament","handle":"diamond-cage-ornament","description":"\u003ch5\u003eTHE PRODUCT\u003c\/h5\u003e\n\u003cp\u003eGet festive in your home this Christmas with our Danish designed seasonal decorations. This black metal ornament will look gorgeous in your Christmas tree or simply hanging on a branch. For the perfect Scandinavian Christmas look, hang in a cluster or paired with copper or brass decorations. Top tip: style with a mini air plant for a contemporary look. Dimensions: H8cm x W5.7cm\u003c\/p\u003e\n\u003ch5\u003eTHE MAKER\u003c\/h5\u003e\n\u003cp\u003e\u003cspan\u003eDesigned in Denmark, this unique style is a mixture of raw products with a nostalgic Scandinavian twist and reproductions of fantastic pieces from times past. Beautiful homewares made with quality materials.\u003c\/span\u003e\u003c\/p\u003e","published_at":"2015-11-03T17:28:00+00:00","created_at":"2015-11-03T13:40:02+00:00","vendor":"Metal","type":"Ornament","tags":["all","Christmas","Christmas crackers - Under £10","Danish Design","decoration"],"price":650,"price_min":650,"price_max":650,"available":true,"price_varies":false,"compare_at_price":null,"compare_at_price_min":0,"compare_at_price_max":0,"compare_at_price_varies":false,"variants":[{"id":10193129859,"title":"Default Title","options":["Default Title"],"option1":"Default Title","option2":null,"option3":null,"price":650,"weight":40,"compare_at_price":null,"inventory_quantity":7,"inventory_management":"shopify","inventory_policy":"deny","available":true,"sku":"","requires_shipping":true,"taxable":false,"barcode":"","featured_image":null}],"images":["\/\/cdn.shopify.com\/s\/files\/1\/0666\/1185\/products\/IMG_6902.jpg?v=1449872890","\/\/cdn.shopify.com\/s\/files\/1\/0666\/1185\/products\/IMG_6903.jpg?v=1449872890","\/\/cdn.shopify.com\/s\/files\/1\/0666\/1185\/products\/IMG_6908_c46fa7ec-18e8-4184-ab19-ea5b96f2bd0b.jpg?v=1449872890","\/\/cdn.shopify.com\/s\/files\/1\/0666\/1185\/products\/IMG_6912closeup.jpg?v=1449872890","\/\/cdn.shopify.com\/s\/files\/1\/0666\/1185\/products\/IMG_6795_4d271ec7-acc2-4abc-9c13-4aa989b747f3.jpg?v=1449872890"],"featured_image":"\/\/cdn.shopify.com\/s\/files\/1\/0666\/1185\/products\/IMG_6902.jpg?v=1449872890","options":["Title"],"content":"\u003ch5\u003eTHE PRODUCT\u003c\/h5\u003e\n\u003cp\u003eGet festive in your home this Christmas with our Danish designed seasonal decorations. This black metal ornament will look gorgeous in your Christmas tree or simply hanging on a branch. For the perfect Scandinavian Christmas look, hang in a cluster or paired with copper or brass decorations. Top tip: style with a mini air plant for a contemporary look. Dimensions: H8cm x W5.7cm\u003c\/p\u003e\n\u003ch5\u003eTHE MAKER\u003c\/h5\u003e\n\u003cp\u003e\u003cspan\u003eDesigned in Denmark, this unique style is a mixture of raw products with a nostalgic Scandinavian twist and reproductions of fantastic pieces from times past. Beautiful homewares made with quality materials.\u003c\/span\u003e\u003c\/p\u003e"},
+      onVariantSelected: selectCallback,
+      enableHistoryState: true
+    });
+
+    // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
+    
+
+    // Hide selectors if we only have 1 variant and its title contains 'Default'.
+    
+      $('.selector-wrapper').hide();
+    
+  });
+</script>

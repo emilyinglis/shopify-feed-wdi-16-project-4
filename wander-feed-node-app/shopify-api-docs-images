@@ -1,0 +1,21 @@
+Guidance on product images from Shopify docs: https://docs.shopify.com/api/product_image#index
+
+
+  ---> GET ALL IMAGES
+
+  https://wander-feed.myshopify.com/admin/products/3697025351/images.json
+
+
+  ___________________________________________
+
+
+  ---> GET A SINGLE IMAGE BY PRODUCT AND IMAGE ID
+
+  GET /admin/products/#{id}/images/#{id}.json
+
+
+  Example: /admin/products/632910392/images/850703190.json
+
+  ___________________________________________
+
+  
