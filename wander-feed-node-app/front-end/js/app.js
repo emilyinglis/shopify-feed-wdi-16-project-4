@@ -33,9 +33,11 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "contact.html"
     })
     .state('cart', {
-      url: "/shopping-cart",
+      url: "/cart",
       templateUrl: "cart.html"
     })
 
   $urlRouterProvider.otherwise("/");
 }
+
+

@@ -1,5 +1,4 @@
 
-
 <!-- __________________________________STYLESHEET (WON'T WORK WITHOUT) ____________________________________ -->
 
 
@@ -42,12 +41,9 @@
       <div class="row" id="row-master">
         <div class="medium-6 columns">
           <img id="thumbnail" class="thumbnail" ng-src="{{products.selectedProduct.shopify.images[0].src}}" />
-
           <div class="row small-up-4">
            <div class="column" ng-repeat="image in products.selectedProduct.shopify.images" >
-
-            <img id="thumbnail" class="thumbnail" ng-src="{{image.src}}" />
-
+           <img id="thumbnail" class="thumbnail" ng-src="{{image.src}}" />
           </div>
         </div>
       </div>
@@ -57,9 +53,9 @@
       <!-- TITLE & DESC -->
 
       <div id="details-frame" class="medium-6 large-5 columns">
-        <h3 style="font-family: montserrat; font-size: 18px; font-weight: bold;">{{products.selectedProduct.shopify.title | uppercase}}</h3>
-        <h3 style="font-family: montserrat; font-size: 15px">£{{products.selectedProduct.shopify.variants[0].price | uppercase}}</h3>
-        <p style="font-size: 15px;">BY {{products.selectedProduct.shopify.vendor | uppercase}}</p>
+        <h3 style="font-family: montserrat; font-size: 18px; font-weight: bold;" ng-model="title">{{products.selectedProduct.shopify.title | uppercase}}</h3>
+        <p style="font-size: 15px" ng-model="price"> £{{products.selectedProduct.shopify.variants[0].price | uppercase}}</p>
+        <p style="font-size: 15px;"ng-model="vendor" >BY {{products.selectedProduct.shopify.vendor | uppercase}}</p>
         <hr>
 
 
@@ -67,37 +63,89 @@
 
         <!-- VARIANTS  -->
 
-          <!-- Create loop -->
-          <!-- Create function to not render dropdown if only variant is Default Title -->
+        <!-- !!! Create function to not render dropdown if only variant is Default Title -->
 
         <label>
           <select id="variant-selector">
-            <option>{{products.selectedProduct.shopify.variants[0].title}} |</option>
-            <option>{{products.selectedProduct.shopify.variants[1].title}}</option>
-            <option>{{products.selectedProduct.shopify.variants[2].title}}</option>
+            <div>
+              <option ng-repeat="variant in products.selectedProduct.shopify.variants" ng-model="variant" >{{variant.title}}</option>
+            </div>
           </select>
         </label>
 
 
 
 
-        <!-- QUANTITY  -->
-
-<!--         <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Quantity</label>
-          </div>
-          <div class="small-9 columns">
-            <input type="text" id="middle-label" placeholder="One fish two fish">
-          </div>
-        </div> -->
-
-
-
-
         <!-- ADD TO BAG & SOCIAL  -->
 
-        <a href="#" id="bag-button-style" class="large expanded hollow button">ADD TO BAG</a>
+        <!-- !!! Create function for adding to bag -->
+
+        <!-- First attempt -->
+        <button type="submit" id="bag-button-style" class="large expanded hollow button" ng-click="addToBag(title, variant, price, vendor, newItem)">ADD TO BAG</button>
+
+
+
+
+<!-- Second attempt from att pynta code -->
+
+
+      <form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm" class="ng-pristine ng-valid">
+
+                
+                <span id="productPrice" class="h4" itemprop="price">
+                  £{{products.selectedProduct.shopify.variants[0].price | uppercase}}
+                </span>
+
+                
+                <div class="selector-wrapper">
+
+
+                  <select class="single-option-selector" data-option="option1" id="productSelect-option-0">
+
+                  <option value="Short (right)">Short (right)</option><option value="Tall (centre)">Tall (centre)</option><option value="Bell (left)">Bell (left)</option>
+
+                  </select>
+
+                </div>
+
+                  <select name="id" id="productSelect" class="product-variants" style="display: none;">
+                  
+                    
+                      <option selected="selected" value="11249238470">Short - £8.00 GBP</option>
+                      
+                      <option value="11249238534">Tall - £8.00 GBP</option>
+
+                      <option value="11249238598">Bell - £8.00 GBP</option>
+
+                  
+                  </select>
+
+                
+
+                <!-- <label for="quantity" class="quantity-selector">Quantity</label> -->
+                
+        
+          <div class="js-qty">
+            <input type="text" class="js--num" value="1" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="quantity" id="quantity">
+            <span class="js--qty-adjuster js--add ft-icon-plus-circled" data-id="" data-qty="11"></span>
+            <span class="js--qty-adjuster js--minus ft-icon-minus-circled" data-id="" data-qty="0"></span>
+          </div>
+        
+        
+
+                <button type="submit" name="add" id="addToCart" class="btn">
+                  <span id="addToCartText">Add to Basket</span>
+                </button>
+              </form>
+
+
+
+<!-- SEOCND ATTTEMPT FROM ATT PYNTA ENDS -->
+
+
+
+
+
         <div class="small secondary expanded button-group">
           <a id="social-button-style" class="button">Facebook</a>
           <a id="social-button-style" class="button">Twitter</a>
@@ -109,7 +157,9 @@
 
 
         <h4 style="font-family: montserrat; font-size: 12px; font-weight: bold;">DESCRIPTION</h4>
+
         <!-- <p style="font-size: 12px;">{{products.selectedProduct.shopify.body_html}}</p> -->
+        
         <p style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
         
       </div>
@@ -117,11 +167,11 @@
 
 
 
-  <br><br>
+    <br><br>
 
 
 
 
-</div>
+  </div>
 
 

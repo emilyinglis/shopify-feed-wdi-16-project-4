@@ -1,1 +1,23 @@
-<h1>Shopping Cart</h1>
+<div id="show-page-styling">
+
+  <br>
+
+  <div id="breadcrumbs"class="row columns">
+    <nav aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs">
+        <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
+        <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="products">Shop</a></li>
+        <li><a id="link-colour" href="#">{{products.selectedProduct.shopify.title}}</a></li>
+        <li>
+          <span class="show-for-sr">Current: </span>Shopping Cart
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <br>
+
+
+  <h1>TITLE: {{products.selectedProduct.shopify.title}}</h1>
+
+  <h1>SHOPPING CART</h1>

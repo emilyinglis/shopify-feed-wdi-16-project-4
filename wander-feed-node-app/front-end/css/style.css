@@ -53,6 +53,14 @@ a:focus, a:hover {
 
 /* -------------->  SHOW product page*/
 
+.md-button.md-fab {
+  line-height: 5.6rem;
+  min-width: 0;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
 
 #breadcrumbs {
   max-width: 90%;
