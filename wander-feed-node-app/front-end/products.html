@@ -26,12 +26,12 @@
 
 <br><br>
 
-<div class="row columns">
+<div id="breadcrumbs" class="row columns">
   <nav aria-label="You are here:" role="navigation">
     <ul class="breadcrumbs">
       <li><a href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
       <li>
-        <span class="show-for-sr">Current: </span> Clothing
+        <span class="show-for-sr">Current: </span> Shop
       </li>
     </ul>
   </nav>
@@ -45,10 +45,10 @@
 
   <!-- CATEGORY FILTERS -->
 
-  
+
       <!-- <div class="medium-6 large-1 columns">
 
-        <h3 id="left-nav">Clothing</h3>
+        <h3 id="left-nav">Shop</h3>
         <br>
         <ul>
           <li><a href="#">All</a></li>
@@ -71,7 +71,7 @@
             <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
             <h5 id="title-container">{{product.shopify.title}}</h5>
             <br>
-            <a href="#" class="button expanded hollow">Add to Bag</a>
+            <!-- <a href="#" class="button expanded hollow">Add to Bag</a> -->
           </div>
 
         </div>

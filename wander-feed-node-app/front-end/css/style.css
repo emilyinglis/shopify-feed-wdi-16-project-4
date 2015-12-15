@@ -4,6 +4,7 @@ body {
   width: 100%;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
+  background-color: #F5F5F5;
 }
 
 p {
@@ -12,6 +13,13 @@ p {
 
 a:focus, a:hover {
   color: #99FF0A;
+}
+
+#sub-top-bar {
+  background-color: black;
+  color: white;
+  max-width: 100%;
+  margin: 0;
 }
 
 #footer {
@@ -25,7 +33,7 @@ a:focus, a:hover {
 #top-bar-id {
   background-color: white; 
   text-align: center;
-  margin: auto;
+  padding: 0px;
   line-height: 56px;
   font-size: 10px;
   font-family: 'Montserrat', sans-serif;
@@ -46,12 +54,38 @@ a:focus, a:hover {
 /* -------------->  SHOW product page*/
 
 
+#breadcrumbs {
+  max-width: 90%;
+}
+#row-master {
+  max-width: 90%;
+}
+
+#thumbnail {
+  border: none;
+  box-shadow: 1px 1px 1px rgba(34,34,34,.1);
+}
+
+#details-frame {
+  padding: 46px;
+  background: #FFFFFF;
+  color: black;
+  box-shadow: 1px 1px 1px rgba(34,34,34,.1);
+}
+
+
 #show-page-styling {
   font-family: 'Montserrat', sans-serif;
+  background-color: #F5F5F5;
 }
 
 #link-colour {
   color: #99FF0A;
+}
+
+#variant-selector {
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
 #bag-button-style {

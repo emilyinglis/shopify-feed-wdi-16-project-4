@@ -1,3 +1,5 @@
+
+
 <!-- __________________________________STYLESHEET (WON'T WORK WITHOUT) ____________________________________ -->
 
 
@@ -8,13 +10,13 @@
 
 <div id="show-page-styling">
 
-  <br><br>
+  <br>
 
-  <div class="row columns">
+  <div id="breadcrumbs"class="row columns">
     <nav aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
         <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
-        <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="products">Clothing</a></li>
+        <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="products">Shop</a></li>
         <li>
           <span class="show-for-sr">Current: </span>{{products.selectedProduct.shopify.title}}
         </li>
@@ -22,7 +24,7 @@
     </nav>
   </div>
 
-  <br><br>
+  <br>
 
   <!--______________________________________________IMAGES_______________________________________________________-->
 
@@ -37,14 +39,14 @@
       </div> -->
 
 
-      <div class="row">
+      <div class="row" id="row-master">
         <div class="medium-6 columns">
-          <img class="thumbnail" ng-src="{{products.selectedProduct.shopify.images[0].src}}" />
+          <img id="thumbnail" class="thumbnail" ng-src="{{products.selectedProduct.shopify.images[0].src}}" />
 
           <div class="row small-up-4">
            <div class="column" ng-repeat="image in products.selectedProduct.shopify.images" >
 
-            <img class="thumbnail" ng-src="{{image.src}}" />
+            <img id="thumbnail" class="thumbnail" ng-src="{{image.src}}" />
 
           </div>
         </div>
@@ -54,9 +56,11 @@
 
       <!-- TITLE & DESC -->
 
-      <div class="medium-6 large-5 columns">
-        <h3 style="font-family: montserrat;">{{products.selectedProduct.shopify.title}}</h3>
-        <p>{{products.selectedProduct.shopify.body_html}}</p>
+      <div id="details-frame" class="medium-6 large-5 columns">
+        <h3 style="font-family: montserrat; font-size: 18px; font-weight: bold;">{{products.selectedProduct.shopify.title | uppercase}}</h3>
+        <h3 style="font-family: montserrat; font-size: 15px">£{{products.selectedProduct.shopify.variants[0].price | uppercase}}</h3>
+        <p style="font-size: 15px;">BY {{products.selectedProduct.shopify.vendor | uppercase}}</p>
+        <hr>
 
 
 
@@ -64,10 +68,11 @@
         <!-- VARIANTS  -->
 
           <!-- Create loop -->
+          <!-- Create function to not render dropdown if only variant is Default Title -->
 
         <label>
-          <select>
-            <option>{{products.selectedProduct.shopify.variants[0].title}}</option>
+          <select id="variant-selector">
+            <option>{{products.selectedProduct.shopify.variants[0].title}} |</option>
             <option>{{products.selectedProduct.shopify.variants[1].title}}</option>
             <option>{{products.selectedProduct.shopify.variants[2].title}}</option>
           </select>
@@ -92,18 +97,29 @@
 
         <!-- ADD TO BAG & SOCIAL  -->
 
-        <a href="#" id="bag-button-style" class="large expanded hollow button">Add to Bag</a>
+        <a href="#" id="bag-button-style" class="large expanded hollow button">ADD TO BAG</a>
         <div class="small secondary expanded button-group">
           <a id="social-button-style" class="button">Facebook</a>
           <a id="social-button-style" class="button">Twitter</a>
           <a id="social-button-style-right" class="button">Instagram</a>
         </div>
+
+
+        <hr>
+
+
+        <h4 style="font-family: montserrat; font-size: 12px; font-weight: bold;">DESCRIPTION</h4>
+        <!-- <p style="font-size: 12px;">{{products.selectedProduct.shopify.body_html}}</p> -->
+        <p style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        
       </div>
     </div>
 
 
 
   <br><br>
+
+
 
 
 </div>
