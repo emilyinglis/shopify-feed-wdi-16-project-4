@@ -12,10 +12,9 @@ function ProductsController(Product, $http, $stateParams){
   self.all = [];
   self.selectedProduct = {};
   self.getProducts = getProducts;
-  // self.selectProduct = selectProduct;
-  // self.selectedItem = {};
+  self.loadImage = loadImage;
 
-
+  // SHOW
   if ($stateParams.id) getProduct();
 
    function getProduct(){
@@ -25,21 +24,27 @@ function ProductsController(Product, $http, $stateParams){
        }
 
 
-  // INDEX / all products
-
+  // INDEX
   function getProducts(){
     Product.query(function(data){
       return self.all = data;
     });
   }
 
-  //---> SHOW the selected product
+ 
+  // IMG THUMBNAIL CLICK EVENT
 
-  // function selectProduct(product) {
-  //   self.selectedProduct = product;
-  //   console.log(product)
-  //   console.log("SELECTED PRODUCT TITLE " + self.selectedProduct.shopify.title);
-  // };
+  function loadImage(){
+    console.log("Image clicked one")
+    // self.img.path = self.image.src;
+    // console.log("Image clicked two");
+  }
+
+  // $scope.loadimage = function(material) {
+  //   $scope.image.path = $scope.material.preview;
+  // }
+
+
 
 
   self.getProducts();
