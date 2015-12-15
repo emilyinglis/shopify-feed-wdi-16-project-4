@@ -1,4 +1,4 @@
-/*full site styling*/
+/* --------------> full site styling*/
 
 body {
   width: 100%;
@@ -17,22 +17,18 @@ a:focus, a:hover {
 #footer {
   background-color: black;
   color: white;
-/*  background: red;*/
 }
 
 
-/*top nav*/
-.menu-option-wander {
-  font-size: 20px;
-  color: black;
-}
+/* --------------> Top Nav*/
 
-.top-bar {
+#top-bar-id {
   background-color: white; 
   text-align: center;
   margin: auto;
   line-height: 56px;
   font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .top-bar li {
@@ -45,11 +41,50 @@ a:focus, a:hover {
   vertical-align: middle;
 }
 
-/*All products*/
+
+
+/* -------------->  SHOW product page*/
+
+
+#show-page-styling {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#link-colour {
+  color: #99FF0A;
+}
+
+#bag-button-style {
+  color: white;
+  background-color: black;
+  border: none;
+  font-size: 18px;
+}
+
+#social-button-style {
+  color: black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  background-color: white;
+}
+
+#social-button-style-right {
+  color: black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  background-color: white;
+}
+
+/* --------------> ALL products*/
+
 
 .breadcrumbs a {
   color: #99FF0A;
 }
+
 
 #left-nav {
   width: 10px;
