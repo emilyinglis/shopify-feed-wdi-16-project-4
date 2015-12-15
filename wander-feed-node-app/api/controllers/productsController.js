@@ -29,8 +29,7 @@ function productsShow(req, res){
     res.status(200).send(product);
   }).select('-__v');
 }
-
-
+ 
 // ------------------------
 
 function productsDelete(req, res){

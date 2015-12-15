@@ -10,10 +10,10 @@
   <div class="row columns">
     <nav aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Clothing</a></li>
+        <li><a href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
+        <li><a href="#" ui-sref-active="active" ui-sref="products">Clothing</a></li>
         <li>
-          <span class="show-for-sr">Current: </span>Product Title <!-- HOW TO PULL IN ID? USE CLICK EVENT TO PASS THROUGH? -->
+          <span class="show-for-sr">Current: </span>{{products.selectedProduct.shopify.title}} <!-- HOW TO PULL IN ID? USE CLICK EVENT TO PASS THROUGH? -->
         </li>
       </ul>
     </nav>
@@ -22,33 +22,30 @@
 
   <div class="row">
     <div class="medium-6 columns">
-      <img class="thumbnail" src="http://placehold.it/650x350">
+      <img class="thumbnail" src="{{products.selectedProduct.shopify.image[0].src}}">
       <div class="row small-up-4">
         <div class="column">
-          <img class="thumbnail" src="http://placehold.it/250x200">
+          <img class="thumbnail" src="{{products.selectedProduct.shopify.image[0].src}}">
         </div>
         <div class="column">
-          <img class="thumbnail" src="http://placehold.it/250x200">
+          <img class="thumbnail" src="{{products.selectedProduct.shopify.image[0].src}}">
         </div>
         <div class="column">
-          <img class="thumbnail" src="http://placehold.it/250x200">
+          <img class="thumbnail" src="{{products.selectedProduct.shopify.image[0].src}}">
         </div>
         <div class="column">
-          <img class="thumbnail" src="http://placehold.it/250x200">
+          <img class="thumbnail" src="{{products.selectedProduct.shopify.image[0].src}}">
         </div>
       </div>
     </div>
     <div class="medium-6 large-5 columns">
-      <h1>{{products.selectedProduct}}</h1>
-
-      <h3>Product Title</h3>
-      <p>Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in.</p>
+      <h3>{{products.selectedProduct.shopify.title}}</h3>
+      <p>{{products.selectedProduct.shopify.body_html}}</p>
       <label>Size
         <select>
-          <option value="husker">Small</option>
-          <option value="starbuck">Medium</option>
-          <option value="hotdog">Large</option>
-          <option value="apollo">Yeti</option>
+          <option>{{products.selectedProduct.shopify.variants[0].title}}</option>
+          <option>{{products.selectedProduct.shopify.variants[1].title}}</option>
+          <option>{{products.selectedProduct.shopify.variants[2].title}}</option>
         </select>
       </label>
       <div class="row">
