@@ -33,7 +33,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "contact.html"
     })
     .state('cart', {
-      url: "/cart",
+      url: "/cart/add",
       templateUrl: "cart.html"
     })
 

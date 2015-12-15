@@ -1,13 +1,14 @@
+
 <div id="show-page-styling">
 
-  <br>
+<br>
 
-  <div id="breadcrumbs"class="row columns">
+  <div id="breadcrumbs" class="row columns" >
     <nav aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
         <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
         <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="products">Shop</a></li>
-        <li><a id="link-colour" href="#">{{products.selectedProduct.shopify.title}}</a></li>
+        <li ng-repeat="product in products.shoppingCart"><a id="link-colour" href="#"></a>{{product.product.shopify.title}}</li>
         <li>
           <span class="show-for-sr">Current: </span>Shopping Cart
         </li>
@@ -15,9 +16,31 @@
     </nav>
   </div>
 
+
   <br>
 
+  
+  <div style="max-width: 90%;" class="row">
+    <div id="details-frame" style="min-height: 100px;" class="medium-12 large-12 columns">
+     
+        <h1>SHOPPING CART</h1>
 
-  <h1>TITLE: {{products.selectedProduct.shopify.title}}</h1>
+  </div>
+</div>
 
-  <h1>SHOPPING CART</h1>
+<br>
+
+  <div style="max-width: 90%;" class="row">
+    <div id="details-frame" class="medium-12 large-12 columns">
+      <div class="row small-up-4">
+        <div class="column" ng-repeat="product in products.shoppingCart">
+        <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.product.shopify.image[0].src}}"></a>
+        <h5 id="title-container" style="font-size: 15px;">{{product.product.shopify.title}}</h5>
+        <br>
+        <!-- <a href="#" class="button expanded hollow">Add to Bag</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

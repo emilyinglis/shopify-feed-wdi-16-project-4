@@ -5,6 +5,8 @@ var express = require('express'),
 
 var productsController = require('../controllers/productsController');
 
+// router.route('products/cart')
+//   .post(productsController.addToBag)
 
 router.route('/products')
   .get(productsController.productsIndex)      

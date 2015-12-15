@@ -2,43 +2,42 @@ angular
   .module('shopify-feed')
   .controller('ProductsController', ProductsController);
 
-ProductsController.$inject = ["Product", "$http", '$stateParams'];
+ProductsController.$inject = ["Product", "$http", '$stateParams', '$state', 'cart'];
 
-function ProductsController(Product, $http, $stateParams){
+function ProductsController(Product, $http, $stateParams, $state, cart){
 
-  console.log($stateParams);
+  console.log("$stateParams ", $stateParams);
+  console.log($state)
 
-  var self = this;
-  self.all = [];
-  self.selectedProduct = {};
-  self.getProducts = getProducts;
-  self.loadImage = loadImage;
-
-
-// ADD PRODUCT TO BAG
-
-
-  self.shoppingCart = [];
-  self.total = 0;
-  self.addToBag = addToBag;
+  var self              = this;
+  self.all              = [];
+  self.selectedProduct  = {};
+  self.getProducts      = getProducts;
+  self.loadImage        = loadImage;
+  self.addToBag         = addToBag;
+  self.shoppingCart     = cart.list;
 
 
-  function addToBag(title, variant, price, vendor, newItem){
-
-    console.log("addToBag function entered")
-         
-         title = parseInt(title);
-         variant = parseInt(variant);
-         price = parseInt(price);
-         vendor = parseInt(vendor);
-
-          self.shoppingCart.push(newItem);
-
-          console.log(self.shoppingCart);
-
-         };
+// ________________________________________________________________________________________  
 
 
+// ADD TO BAG 
+
+//We want to PASS IN the data (title, vendor, price, variant) from the submitted 'form' on the product page when a user clicks 'add to bag'
+//With that data, we want to 'post' it to the /cart/add page
+//We also want to save that page with a unique URL / id so the user can go back to shopping and return to checkout later
+//Finally, from the /cart/add page we want to click through to paypal checkout, carrying all relevant data with us (work on top)
+
+  function addToBag(product, variant){
+    console.log("Add to bag clicked")
+    cart.add(product, variant);
+    $state.go("cart");
+  }
+ 
+  // 15/12/15 - console logging and adding into the array the size variant title
+
+
+// ________________________________________________________________________________________  
 
 // ---> SHOW
 
@@ -51,6 +50,9 @@ function ProductsController(Product, $http, $stateParams){
        }
 
 
+// ________________________________________________________________________________________  
+
+
 // ---> INDEX
 
   function getProducts(){
@@ -58,6 +60,9 @@ function ProductsController(Product, $http, $stateParams){
       return self.all = data;
     });
   }
+
+
+// ________________________________________________________________________________________  
 
  
 // ---> IMG THUMBNAIL CLICK EVENT (NOT WORKING)
@@ -72,6 +77,8 @@ function ProductsController(Product, $http, $stateParams){
   //   $scope.image.path = $scope.material.preview;
   // }
 
+
+// ________________________________________________________________________________________  
 
 
   self.getProducts();

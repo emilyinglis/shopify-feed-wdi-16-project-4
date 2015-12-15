@@ -12,7 +12,7 @@ From Shopify documentation: https://docs.shopify.com/api/product_variant#update
     PUT /admin/variants/#{id}.json
     {
       "variant": {
-        "id": 808950810,                            ---> product_id
+        "id": 808950810,                            
         "inventory_quantity_adjustment": -5
       }
   }

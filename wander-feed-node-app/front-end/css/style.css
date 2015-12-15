@@ -79,6 +79,7 @@ a:focus, a:hover {
   background: #FFFFFF;
   color: black;
   box-shadow: 1px 1px 1px rgba(34,34,34,.1);
+  min-height: 400px;
 }
 
 

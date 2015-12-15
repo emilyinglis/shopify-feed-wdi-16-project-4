@@ -1,0 +1,24 @@
+// PUT
+
+
+
+shopify.put('/admin/products/{id}.json', postData, function(err, resp) {
+  if(err) {
+    return console.log(err);
+  }
+  console.log(resp);
+});
+
+
+_____________________________________________
+
+// function productsUpdate(req, res){
+//   var id = req.params.id;
+
+//   Project.findByIdAndUpdate({ _id: id }, req.body.project, function(err, project){
+//     if (err) return res.status(500).send(err);
+//     if (!project) return res.status(404).send(err);
+
+//     res.status(200).send(project);
+//   })
+// }

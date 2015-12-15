@@ -9,7 +9,11 @@ function Product($resource){
   var ProductResource = $resource('http://localhost:3000/products/:id',
     {id: '@_id'},
     { 'update': { method:'PUT' },
-      'get':    { method: 'GET' }
+      'get':    { method: 'GET' },
+    // 'addToBag': {
+    //   url: 'http://localhost:3000/products/cart',
+    //   method: 'POST'
+    //   }
     }
   );
   

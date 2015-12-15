@@ -9,6 +9,7 @@ var url = "https://804c38c7e20539c1d5c856675950afae:50e1fc6bd3d62890b1522441599b
 
 request.get(url, function(err, res, body) {
   if (err) return console.log(err);
+
   var products = JSON.parse(body).products;
 
   products.forEach(function(product, index) {
@@ -16,11 +17,25 @@ request.get(url, function(err, res, body) {
     console.log("Saving/updating: ", product.title);
 
     Product.findOne({ "shopify.id": product.id }, function(err, localProduct) {
+      
       if (err) return console.log(err);
+      
       if (localProduct) {
         return console.log("Update goes here...", localProduct)
-        // WRITE UPDATE CODE HERE
+        
         // UPDATE INVENTORY WHEN SOLD
+
+        // PUT /admin/variants/#{id}.json
+        //   {
+        //     "variant": {
+        //       "id": 808950810,                            
+        //       "inventory_quantity_adjustment": -5
+        //     }
+        // }
+
+        // Example: /admin/variants/808950810.json
+
+        }
       }
 
       var newProduct = new Product();

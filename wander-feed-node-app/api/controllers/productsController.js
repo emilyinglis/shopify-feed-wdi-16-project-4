@@ -44,6 +44,10 @@ function productsDelete(req, res){
 // ------------------------
 
 
+
+
+
+
 module.exports = {
   productsIndex:  productsIndex,
   productsCreate: productsCreate,

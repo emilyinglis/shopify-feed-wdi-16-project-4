@@ -43,18 +43,18 @@
           <img id="thumbnail" class="thumbnail" ng-src="{{products.selectedProduct.shopify.images[0].src}}" />
           <div class="row small-up-4">
            <div class="column" ng-repeat="image in products.selectedProduct.shopify.images" >
-           <img id="thumbnail" class="thumbnail" ng-src="{{image.src}}" />
-          </div>
-        </div>
-      </div>
+             <img id="thumbnail" class="thumbnail" ng-src="{{image.src}}" />
+           </div>
+         </div>
+       </div>
 
 
 
-      <!-- TITLE & DESC -->
+       <!-- TITLE & DESC -->
 
-      <div id="details-frame" class="medium-6 large-5 columns">
+       <div id="details-frame" class="medium-6 large-5 columns">
         <h3 style="font-family: montserrat; font-size: 18px; font-weight: bold;" ng-model="title">{{products.selectedProduct.shopify.title | uppercase}}</h3>
-        <p style="font-size: 15px" ng-model="price"> £{{products.selectedProduct.shopify.variants[0].price | uppercase}}</p>
+        <p style="font-size: 15px" c> £{{products.selectedProduct.shopify.variants[0].price | uppercase}}</p>
         <p style="font-size: 15px;"ng-model="vendor" >BY {{products.selectedProduct.shopify.vendor | uppercase}}</p>
         <hr>
 
@@ -66,10 +66,8 @@
         <!-- !!! Create function to not render dropdown if only variant is Default Title -->
 
         <label>
-          <select id="variant-selector">
-            <div>
-              <option ng-repeat="variant in products.selectedProduct.shopify.variants" ng-model="variant" >{{variant.title}}</option>
-            </div>
+          <select id="variant-selector" ng-model="variant">
+            <option ng-repeat="variant in products.selectedProduct.shopify.variants" ng-model="variant" >{{variant.title}}</option>
           </select>
         </label>
 
@@ -81,62 +79,72 @@
         <!-- !!! Create function for adding to bag -->
 
         <!-- First attempt -->
-        <button type="submit" id="bag-button-style" class="large expanded hollow button" ng-click="addToBag(title, variant, price, vendor, newItem)">ADD TO BAG</button>
+        <button type="submit" id="bag-button-style" class="large expanded hollow button" ng-click="products.addToBag(products.selectedProduct, variant)">ADD TO BAG</button>
 
 
 
 
-<!-- Second attempt from att pynta code -->
+<!-- ADD TO BAG __________________ Second attempt from att pynta code -->
+<!-- 
+        <h5>Test Mini Form</h5> -->
+
+     <!--    <form ng-submit="products.addToBag(content)">
+
+        <input type="text" ng-model="beep" value="Example input">
+        <input type="text" ng-model="bop" value="Example input">
+        <input type="submit" ng-model="content" value="Submit">
+
+        </form> -->
 
 
-      <form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm" class="ng-pristine ng-valid">
+        <hr>
 
-                
-                <span id="productPrice" class="h4" itemprop="price">
-                  £{{products.selectedProduct.shopify.variants[0].price | uppercase}}
-                </span>
+        <h5>Form Test</h5>
 
-                
-                <div class="selector-wrapper">
+        <form ng-submit="products.addToBag(title)" method="post" enctype="multipart/form-data" id="addToCartForm" class="ng-pristine ng-valid">
+        <!-- previously contained action="#/cart/add" -->
 
+          <span id="productPrice" class="h4" itemprop="price">
+            £{{products.selectedProduct.shopify.variants[0].price | uppercase}}
+          </span>
 
-                  <select class="single-option-selector" data-option="option1" id="productSelect-option-0">
+          <!-- !!!!!!! Console logging the variant title -->
 
-                  <option value="Short (right)">Short (right)</option><option value="Tall (centre)">Tall (centre)</option><option value="Bell (left)">Bell (left)</option>
+          <select class="single-option-selector" data-option="option1" id="productSelect-option-0" ng-model="title">
 
-                  </select>
+            <option ng-repeat="variant in products.selectedProduct.shopify.variants" value="{{variant.title}}" ng-model="title">{{variant.title}}</option>
+            
 
-                </div>
+          </select>
 
-                  <select name="id" id="productSelect" class="product-variants" style="display: none;">
-                  
-                    
-                      <option selected="selected" value="11249238470">Short - £8.00 GBP</option>
-                      
-                      <option value="11249238534">Tall - £8.00 GBP</option>
+          <select name="id" id="productSelect" class="product-variants" style="display: none;">
+    
 
-                      <option value="11249238598">Bell - £8.00 GBP</option>
+            <option selected="selected" value="{{products.selectedProduct.shopify.variants[0].id}}">{{products.selectedProduct.shopify.variants[0].title}} - £{{products.selectedProduct.shopify.variants[0].price}}</option>
 
-                  
-                  </select>
+            <option ng-repeat="variant in products.selectedProduct.shopify.variants" ng-if="$index > 0" value="{{variant.id}}">{{variant.title}} - {{variant.price}}</option>
 
-                
+          </select>
+               
 
                 <!-- <label for="quantity" class="quantity-selector">Quantity</label> -->
                 
-        
-          <div class="js-qty">
-            <input type="text" class="js--num" value="1" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="quantity" id="quantity">
-            <span class="js--qty-adjuster js--add ft-icon-plus-circled" data-id="" data-qty="11"></span>
-            <span class="js--qty-adjuster js--minus ft-icon-minus-circled" data-id="" data-qty="0"></span>
-          </div>
-        
-        
 
-                <button type="submit" name="add" id="addToCart" class="btn">
-                  <span id="addToCartText">Add to Basket</span>
-                </button>
-              </form>
+        <!--   <div class="js-qty" ng-model="quantity">
+            <input type="text" class="js--num" value="1" min="1" data-id="" aria-label="quantity" pattern="[0-9]*" name="quantity" id="quantity">
+          </div> -->
+
+          <button type="submit" name="add" id="addToCart" class="btn">
+            <span id="addToCartText">Add to Basket</span> 
+
+            <!-- LINKS INTO THE att-pynta-shopify-variant-handling-code code -->
+
+          </button>
+
+         <!--  <button type="submit" name="addToBag" ng-click="products.addToBag()">Add to Basket</button>
+-->
+          <hr>
+        </form>
 
 
 
@@ -145,33 +153,32 @@
 
 
 
+              <div class="small secondary expanded button-group">
+                <a id="social-button-style" class="button">Facebook</a>
+                <a id="social-button-style" class="button">Twitter</a>
+                <a id="social-button-style-right" class="button">Instagram</a>
+              </div>
 
-        <div class="small secondary expanded button-group">
-          <a id="social-button-style" class="button">Facebook</a>
-          <a id="social-button-style" class="button">Twitter</a>
-          <a id="social-button-style-right" class="button">Instagram</a>
+
+              <hr>
+
+
+              <h4 style="font-family: montserrat; font-size: 12px; font-weight: bold;">DESCRIPTION</h4>
+
+              <!-- <p style="font-size: 12px;">{{products.selectedProduct.shopify.body_html}}</p> -->
+
+              <p style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
+            </div>
+          </div>
+
+
+
+          <br><br>
+
+
+
+
         </div>
-
-
-        <hr>
-
-
-        <h4 style="font-family: montserrat; font-size: 12px; font-weight: bold;">DESCRIPTION</h4>
-
-        <!-- <p style="font-size: 12px;">{{products.selectedProduct.shopify.body_html}}</p> -->
-        
-        <p style="font-size: 12px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        
-      </div>
-    </div>
-
-
-
-    <br><br>
-
-
-
-
-  </div>
 
 
