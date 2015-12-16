@@ -54,8 +54,8 @@
 
        <div id="details-frame" class="medium-6 large-5 columns">
         <h3 style="font-family: montserrat; font-size: 18px; font-weight: bold;" ng-model="title">{{products.selectedProduct.shopify.title | uppercase}}</h3>
-        <p style="font-size: 15px" c> £{{products.selectedProduct.shopify.variants[0].price | uppercase}}</p>
-        <p style="font-size: 15px;"ng-model="vendor" >BY {{products.selectedProduct.shopify.vendor | uppercase}}</p>
+        <p style="font-size: 15px"> £{{products.selectedProduct.shopify.variants[0].price | uppercase}}</p>
+        <p style="font-size: 15px;" ng-model="vendor" >BY {{products.selectedProduct.shopify.vendor | uppercase}}</p>
         <hr>
 
 
@@ -65,9 +65,15 @@
 
         <!-- !!! Create function to not render dropdown if only variant is Default Title -->
 
-        <label>
+<!--         <label>
           <select id="variant-selector" ng-model="variant">
             <option ng-repeat="variant in products.selectedProduct.shopify.variants" ng-model="variant" >{{variant.title}}</option>
+          </select>
+        </label>
+ -->
+        <label>
+          <select id="variant-selector" ng-model="variant">
+            <option ng-repeat="variant in products.selectedProduct.shopify.variants" ng-model="variant" value="{{variant.position-1}}">{{variant.title}}</option>
           </select>
         </label>
 
@@ -75,8 +81,10 @@
         <!-- ADD TO BAG & SOCIAL  -->
 
         <!-- First attempt -->
-        <button type="submit" id="bag-button-style" class="large expanded hollow button" ng-click="products.addToBag(products.selectedProduct, variant)">ADD TO BAG</button>
+        <button type="submit" id="bag-button-style" class="large expanded hollow button" ng-click="products.addToBag(variant)" >ADD TO BAG</button>
 
+        <!-- ng-click="products.addToBag(products.selectedProduct, variant)" -->
+     
 
         <div class="small secondary expanded button-group">
           <a id="social-button-style" class="button">Facebook</a>
@@ -86,6 +94,14 @@
 
 
         <hr>
+
+
+
+
+
+
+
+       <!-- DESCRIPTION -->
 
 
         <h4 style="font-family: montserrat; font-size: 12px; font-weight: bold;">DESCRIPTION</h4>

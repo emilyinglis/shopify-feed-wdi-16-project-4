@@ -1,4 +1,4 @@
-
+<br>
 <div id="show-page-styling">
 
 <br>
@@ -8,7 +8,6 @@
       <ul class="breadcrumbs">
         <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
         <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="products">Shop</a></li>
-        <li ng-repeat="product in products.shoppingCart"><a id="link-colour" href="#"></a>{{product.product.shopify.title}}</li>
         <li>
           <span class="show-for-sr">Current: </span>Shopping Cart
         </li>
@@ -35,10 +34,11 @@
     <div id="details-frame" class="medium-12 large-12 columns">
       <div class="row small-up-4">
         <div class="column" ng-repeat="product in products.shoppingCart">
-        <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.product.shopify.image[0].src}}"></a>
-        <h5 id="title-container" style="font-size: 15px;">{{product.product.shopify.title | uppercase}}</h5>
+        <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
+        <h5 id="title-container" style="font-size: 15px;">{{product.shopify.title | uppercase}}</h5>
+        <span>{{product.shopify.variants[product.variant].price}}</span>
         <br>
-        <!-- <a href="#" class="button expanded hollow">Add to Bag</a> -->
+        <a href="#" class="button expanded hollow">Add to Bag</a>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
-/* --------------> full site styling*/
+
+/* All Site Styling */
 
 body {
   width: 100%;
@@ -13,6 +14,11 @@ p {
 
 a:focus, a:hover {
   color: #99FF0A;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #99FF0A;
 }
 
 #sub-top-bar {
@@ -25,10 +31,23 @@ a:focus, a:hover {
 #footer {
   background-color: black;
   color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+}
+
+#footer-font {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+#footer li a {
+  display: block;
+  padding: 0.5rem 0rem;
+  line-height: 0;
 }
 
 
-/* --------------> Top Nav*/
+/* Top Nav*/
 
 #top-bar-id {
   background-color: white; 
@@ -51,7 +70,13 @@ a:focus, a:hover {
 
 
 
-/* -------------->  SHOW product page*/
+/* SHOW Product Page*/
+
+.button .large .expanded {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
 
 .md-button.md-fab {
   line-height: 5.6rem;
@@ -60,7 +85,6 @@ a:focus, a:hover {
   height: 5.6rem;
   border-radius: 50%;
 }
-
 
 #breadcrumbs {
   max-width: 90%;
@@ -121,7 +145,7 @@ a:focus, a:hover {
   background-color: white;
 }
 
-/* --------------> ALL products*/
+/* ALL Products */
 
 
 .breadcrumbs a {
@@ -159,18 +183,9 @@ a:focus, a:hover {
 }​
 
 
-/*Product Show Page*/
-
-.button .large .expanded {
-  background-color: white;
-  border: 1px solid black;
-  color: black;
-}
-
-
 
 /*ng messaging*/
-
+/*
 .ng-message-error {
   height: 30px;
   width: 75%;
@@ -188,3 +203,4 @@ a:focus, a:hover {
 
 
 
+*/

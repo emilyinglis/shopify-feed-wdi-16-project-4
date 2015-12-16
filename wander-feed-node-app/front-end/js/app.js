@@ -35,8 +35,23 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     })
     .state('cart', {
       url: "/cart/add",
-      templateUrl: "cart.html"
+      templateUrl: "cart.html",
+      controller: "ProductsController as products"
     })
+    // CART TESTING
+    .state('carttest', {
+      url: "/carttest",
+      templateUrl: "cartTest.html"
+    })
+    .state('checkouttest', {
+      url: "/checkouttest",
+      templateUrl: "checkoutTest.html"
+    })
+    .state('ordertest', {
+      url: "/ordertest",
+      templateUrl: "orderTest.html"
+    })
+   
 
   $urlRouterProvider.otherwise("/");
 }
