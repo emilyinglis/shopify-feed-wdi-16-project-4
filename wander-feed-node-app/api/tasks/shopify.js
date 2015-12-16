@@ -36,7 +36,7 @@ request.get(url, function(err, res, body) {
         // Example: /admin/variants/808950810.json
 
         }
-      }
+      });
 
       var newProduct = new Product();
 
@@ -75,4 +75,3 @@ request.get(url, function(err, res, body) {
       })
     })
   })
-});
