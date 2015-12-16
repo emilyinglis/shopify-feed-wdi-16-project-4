@@ -3,6 +3,7 @@ angular
   .config(MainRouter);
 
 MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
+
 function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
 

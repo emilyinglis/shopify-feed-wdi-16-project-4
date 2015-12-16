@@ -23,11 +23,6 @@ function ProductsController(Product, $http, $stateParams, $state, cart){
 
 // ADD TO BAG 
 
-//We want to PASS IN the data (title, vendor, price, variant) from the submitted 'form' on the product page when a user clicks 'add to bag'
-//With that data, we want to 'post' it to the /cart/add page
-//We also want to save that page with a unique URL / id so the user can go back to shopping and return to checkout later
-//Finally, from the /cart/add page we want to click through to paypal checkout, carrying all relevant data with us (work on top)
-
   function addToBag(product, variant){
     console.log("Add to bag clicked")
     cart.add(product, variant);
@@ -48,6 +43,7 @@ function ProductsController(Product, $http, $stateParams, $state, cart){
            self.selectedProduct = data;
          })
        }
+
 
 
 // ________________________________________________________________________________________  

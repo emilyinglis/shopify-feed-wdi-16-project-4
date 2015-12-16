@@ -10,10 +10,6 @@ function Product($resource){
     {id: '@_id'},
     { 'update': { method:'PUT' },
       'get':    { method: 'GET' },
-    // 'addToBag': {
-    //   url: 'http://localhost:3000/products/cart',
-    //   method: 'POST'
-    //   }
     }
   );
   

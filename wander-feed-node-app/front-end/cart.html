@@ -27,6 +27,7 @@
 
   </div>
 </div>
+  
 
 <br>
 
@@ -35,7 +36,7 @@
       <div class="row small-up-4">
         <div class="column" ng-repeat="product in products.shoppingCart">
         <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.product.shopify.image[0].src}}"></a>
-        <h5 id="title-container" style="font-size: 15px;">{{product.product.shopify.title}}</h5>
+        <h5 id="title-container" style="font-size: 15px;">{{product.product.shopify.title | uppercase}}</h5>
         <br>
         <!-- <a href="#" class="button expanded hollow">Add to Bag</a> -->
       </div>
