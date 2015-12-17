@@ -1,47 +1,49 @@
-<br>
+
 <div id="show-page-styling">
 
-<br>
+  <main class="cd-main-content">
 
-  <div id="breadcrumbs" class="row columns" >
-    <nav aria-label="You are here:" role="navigation">
-      <ul class="breadcrumbs">
-        <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
-        <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="products">Shop</a></li>
-        <li>
-          <span class="show-for-sr">Current: </span>Shopping Cart
-        </li>
-      </ul>
-    </nav>
-  </div>
+    <div class="cd-tab-filter-wrapper">
+      <div class="cd-tab-filter">
+        <ul class="cd-filters">
+          <li class="placeholder"> 
+            <a data-type="all" href="#" ui-sref-active="active" ui-sref="products">All</a> <!-- selected option on mobile -->
+          </li> 
+          <li class="filter"><a class="selected" href="#0" ui-sref-active="active" ui-sref="products">My Shopping Cart</a></li>
+        </ul> <!-- cd-filters -->
+      </div> <!-- cd-tab-filter -->
+    </div> <!-- cd-tab-filter-wrapper -->
 
+    <br>
 
-  <br>
+    <div style="max-width: 90%;" class="row">
+      <div id="details-frame" class="medium-12 large-12 columns">
+        <div class="row small-up-4">
+          <div class="column" ng-repeat="product in products.shoppingCart">
+            <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
+            <div id="title-container">
+              <h5 id="title-container" style="font-size: 15px;">{{product.shopify.title | uppercase}}</h5>
+              <h5>£{{product.shopify.variants[product.variant].price}}</h5>
+              <hr>
+            </div>
 
-  
-  <div style="max-width: 90%;" class="row">
-    <div id="details-frame" style="min-height: 100px;" class="medium-12 large-12 columns">
-     
-        <h1>SHOPPING CART</h1>
-
-  </div>
-</div>
-  
-
-<br>
-
-  <div style="max-width: 90%;" class="row">
-    <div id="details-frame" class="medium-12 large-12 columns">
-      <div class="row small-up-4">
-        <div class="column" ng-repeat="product in products.shoppingCart">
-        <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
-        <h5 id="title-container" style="font-size: 15px;">{{product.shopify.title | uppercase}}</h5>
-        <span>{{product.shopify.variants[product.variant].price}}</span>
-        <br>
-        <a href="#" class="button expanded hollow">Add to Bag</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-</div>
+
+
+    <!-- SUGGESTD CODE FOR TOTAL COST -->
+<!-- <div ng-app="myApp" ng-controller="costCtrl">
+
+<input type="number" ng-model="quantity">
+<input type="number" ng-model="price">
+
+<p>Total = {{ (quantity * price) | currency }}</p>
+
+</div> -->
+
+
+
+</main>

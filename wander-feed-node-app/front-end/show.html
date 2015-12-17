@@ -9,33 +9,27 @@
 
 <div id="show-page-styling">
 
-  <br>
-
-  <div id="breadcrumbs"class="row columns">
-    <nav aria-label="You are here:" role="navigation">
-      <ul class="breadcrumbs">
-        <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
-        <li><a id="link-colour" href="#" ui-sref-active="active" ui-sref="products">Shop</a></li>
-        <li>
-          <span class="show-for-sr">Current: </span>{{products.selectedProduct.shopify.title}}
-        </li>
-      </ul>
-    </nav>
-  </div>
-
-  <br>
-
   <!--______________________________________________IMAGES_______________________________________________________-->
 
-  <!-- CLICK EVENT ATTEMPT -->
-      <!-- <div>
-        <ul>
-          <li ng-repeat="image in products.selectedProduct.shopify.images">
-            <img id="image1" ng-src="{{image.src}}" ng-click="loadImage()">
-          </li>
-        </ul>
-        <img id="image2" ng-src="{{img.path}}">
-      </div> -->
+
+  <main class="cd-main-content">
+
+    <div class="cd-tab-filter-wrapper">
+      <div class="cd-tab-filter">
+        <ul id="filter-font"class="cd-filters">
+          <li class="placeholder"> 
+            <a data-type="all" href="#" ui-sref-active="active" ui-sref="products">All</a> <!-- selected option on mobile -->
+          </li> 
+          <li class="filter"><a href="#0" ui-sref-active="active" ui-sref="products">All</a></li>
+          <li class="filter"><a href="#0" ui-sref-active="active" ui-sref="tops">Tops</a></li>
+          <li class="filter"><a href="#0" ui-sref-active="active" ui-sref="bottoms">Bottoms</a></li>
+          <li class="filter"><a href="#" ui-sref-active="active" ui-sref="dresses">Dresses</a></li>
+          <li class="filter"><a href="#" ui-sref-active="active" ui-sref="coatsjackets">Coats & Jackets</a></li>
+          <li class="filter"><a href="#" ui-sref-active="active" ui-sref="loungewear">Loungewear</a></li>
+          <li class="filter"><a href="#" ui-sref-active="active" ui-sref="accessories">Acccessories</a></li>
+        </ul> <!-- cd-filters -->
+      </div> <!-- cd-tab-filter -->
+    </div> <!-- cd-tab-filter-wrapper -->
 
 
       <div class="row" id="row-master">
@@ -64,13 +58,6 @@
         <!-- VARIANTS  -->
 
         <!-- !!! Create function to not render dropdown if only variant is Default Title -->
-
-<!--         <label>
-          <select id="variant-selector" ng-model="variant">
-            <option ng-repeat="variant in products.selectedProduct.shopify.variants" ng-model="variant" >{{variant.title}}</option>
-          </select>
-        </label>
- -->
         <label>
           <select id="variant-selector" ng-model="variant">
             <option ng-repeat="variant in products.selectedProduct.shopify.variants" ng-model="variant" value="{{variant.position-1}}">{{variant.title}}</option>
@@ -84,7 +71,7 @@
         <button type="submit" id="bag-button-style" class="large expanded hollow button" ng-click="products.addToBag(variant)" >ADD TO BAG</button>
 
         <!-- ng-click="products.addToBag(products.selectedProduct, variant)" -->
-     
+
 
         <div class="small secondary expanded button-group">
           <a id="social-button-style" class="button">Facebook</a>
@@ -97,11 +84,7 @@
 
 
 
-
-
-
-
-       <!-- DESCRIPTION -->
+        <!-- DESCRIPTION -->
 
 
         <h4 style="font-family: montserrat; font-size: 12px; font-weight: bold;">DESCRIPTION</h4>
@@ -115,11 +98,14 @@
 
 
 
-    <br><br>
+  <br><br>
+</div>
+</main>
 
 
 
 
-  </div>
+
+
 
 

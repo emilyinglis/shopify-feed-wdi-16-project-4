@@ -16,14 +16,36 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "products.html",
       controller: "ProductsController as products"
     })
+    // PRODUCT CATEGORIES
+    .state('tops', {
+      url: "/products/category/tops",
+      templateUrl: "product_tops.html"
+    })
+    .state('bottoms', {
+      url: "/products/category/bottoms",
+      templateUrl: "product_bottoms.html"
+    })
+    .state('dresses', {
+      url: "/products/category/dresses",
+      templateUrl: "product_dresses.html"
+    })
+    .state('accessories', {
+      url: "/products/category/accessories",
+      templateUrl: "product_accessories.html"
+    })
+    .state('loungewear', {
+      url: "/products/category/loungewear",
+      templateUrl: "product_loungewear.html"
+    })
+    .state('coatsjackets', {
+      url: "/products/category/coats-jackets",
+      templateUrl: "product_coats_jackets.html"
+    })
+    // CATEGORIES ENDS
     .state('show', {
       url: "/products/:id",
       templateUrl: "show.html",
       controller: "ProductsController as products"
-    })
-    .state('homewares', {
-      url: "/homewares",
-      templateUrl: "homewares.html"
     })
     .state('about', {
       url: "/about",
@@ -38,20 +60,6 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "cart.html",
       controller: "ProductsController as products"
     })
-    // CART TESTING
-    .state('carttest', {
-      url: "/carttest",
-      templateUrl: "cartTest.html"
-    })
-    .state('checkouttest', {
-      url: "/checkouttest",
-      templateUrl: "checkoutTest.html"
-    })
-    .state('ordertest', {
-      url: "/ordertest",
-      templateUrl: "orderTest.html"
-    })
-   
 
   $urlRouterProvider.otherwise("/");
 }

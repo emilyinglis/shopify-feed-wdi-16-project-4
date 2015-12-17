@@ -1,0 +1,58 @@
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <ul class="orbit-container">
+   <li class="orbit-slide is-active">
+     <img src="./assets/images/hero-clothing.png">
+   </li>
+ </ul>
+</div>
+
+<br><br>
+
+<div id="breadcrumbs" class="row columns" >
+  <nav role="navigation">
+    <ul class="breadcrumbs">
+      <li><a href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
+      <li>
+        <span class="show-for-sr">Current: </span> Shop
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+<br><br>
+
+<div class="row">
+
+  <div class="medium-12 large-12 columns">
+
+    <div class="row small-up-4">
+
+      <!-- ___________________________________________! CATEGORY FILTER HERE !______________________________________ -->
+
+      <div class="column" ng-repeat="product in products.all | filter: { shopify: { tags: 'tops' } }">
+        <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
+        <h5 id="title-container">{{product.shopify.title}}</h5>
+        <br>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div> 
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+

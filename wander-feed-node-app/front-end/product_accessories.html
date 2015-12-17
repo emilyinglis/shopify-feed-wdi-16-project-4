@@ -1,0 +1,64 @@
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <ul class="orbit-container">
+   <li class="orbit-slide is-active">
+     <img src="./assets/images/hero-clothing.png">
+   </li>
+ </ul>
+</div>
+
+<div class="cd-tab-filter-wrapper">
+  <div class="cd-tab-filter">
+    <ul class="cd-filters">
+      <li class="placeholder"> 
+        <a data-type="all" href="#" ui-sref-active="active" ui-sref="products">All</a> <!-- selected option on mobile -->
+      </li> 
+      <li class="filter"><a href="#0" ui-sref-active="active" ui-sref="products">All</a></li>
+      <li class="filter"><a href="#0" ui-sref-active="active" ui-sref="tops">Tops</a></li>
+      <li class="filter"><a href="#0" ui-sref-active="active" ui-sref="bottoms">Bottoms</a></li>
+      <li class="filter"><a href="#" ui-sref-active="active" ui-sref="dresses">Dresses</a></li>
+      <li class="filter"><a href="#" ui-sref-active="active" ui-sref="coatsjackets">Coats & Jackets</a></li>
+      <li class="filter"><a href="#" ui-sref-active="active" ui-sref="loungewear">Loungewear</a></li>
+      <li class="filter"><a class="selected" href="#" ui-sref-active="active" ui-sref="accessories">Acccessories</a></li>
+    </ul> <!-- cd-filters -->
+  </div> <!-- cd-tab-filter -->
+</div> <!-- cd-tab-filter-wrapper -->
+
+<div class="row">
+
+  <br><br>
+
+  <div class="medium-12 large-12 columns">
+
+    <div class="row small-up-5">
+
+      <div id="column" class="column" ng-repeat="product in products.all | filter: { shopify: { tags: 'accessories' } }">
+
+        <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
+        <div id="title-container">
+          <h5 id="title-container">{{product.shopify.title | uppercase}}</h5>
+          <h5>£{{product.shopify.variants[0].price}}</h5>
+          <hr>
+        </div>
+        <br>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div> 
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-<!-- _____________________________________ HERO / SLIDER _________________________________________ -->
+      <!-- _____________________________________ HERO / SLIDER _________________________________________ -->
 
 
 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
@@ -6,70 +6,61 @@
    <li class="orbit-slide is-active">
      <img src="./assets/images/hero-clothing.png">
    </li>
-  </ul>
+ </ul>
 </div>
 
-
-<!-- ___________________________________________BREADCRUMB________________________________________ -->
-
-
-<br><br>
-
-<div id="breadcrumbs" class="row columns">
-  <nav aria-label="You are here:" role="navigation">
-    <ul class="breadcrumbs">
-      <li><a href="#" ui-sref-active="active" ui-sref="home">Home</a></li>
-      <li>
-        <span class="show-for-sr">Current: </span> Shop
-      </li>
-    </ul>
-  </nav>
-</div>
-
-<!-- ___________________________________________GRID & CATEGORY FILTERS______________________________________ -->
-
-<br><br>
-
-<div class="row">
-
-  <!-- CATEGORY FILTERS -->
+<!-- ___________________________________________CATEGORY FILTERS______________________________________ -->
 
 
-      <!-- <div class="medium-6 large-1 columns">
+<main class="cd-main-content">
 
-        <h3 id="left-nav">Shop</h3>
-        <br>
-        <ul>
-          <li><a href="#">All</a></li>
-          <li><a href="#">Tops</a></li>
-          <li><a href="#">Bottoms</a></li>
-          <li><a href="#">Dresses</a></li>
-          <li><a href="#">Coats & Jackets</a></li>
-          <li><a href="#">Acccessories</a></li>
-        </ul>
-      </div> -->
+  <div class="cd-tab-filter-wrapper">
+    <div class="cd-tab-filter">
+      <ul class="cd-filters">
+        <li class="placeholder"> 
+          <a data-type="all" href="#" ui-sref-active="active" ui-sref="products">All</a> <!-- selected option on mobile -->
+        </li> 
+        <li class="filter"><a class="selected" href="#0" ui-sref-active="active" ui-sref="products">All</a></li>
+        <li class="filter"><a href="#0" ui-sref-active="active" ui-sref="tops">Tops</a></li>
+        <li class="filter"><a href="#0" ui-sref-active="active" ui-sref="bottoms">Bottoms</a></li>
+        <li class="filter"><a href="#" ui-sref-active="active" ui-sref="dresses">Dresses</a></li>
+        <li class="filter"><a href="#" ui-sref-active="active" ui-sref="coatsjackets">Coats & Jackets</a></li>
+        <li class="filter"><a href="#" ui-sref-active="active" ui-sref="loungewear">Loungewear</a></li>
+        <li class="filter"><a href="#" ui-sref-active="active" ui-sref="accessories">Acccessories</a></li>
+      </ul> <!-- cd-filters -->
+    </div> <!-- cd-tab-filter -->
+  </div> <!-- cd-tab-filter-wrapper -->
 
+  <!-- ___________________________________________PRODUCT GRID______________________________________ -->
 
-      <!-- PRODUCT GRID -->
+  <div class="row">
 
-      <div class="medium-12 large-12 columns">
+    <br><br>
 
-        <div class="row small-up-4">
+    <div class="medium-12 large-12 columns">
 
-          <div class="column" ng-repeat="product in products.all | orderBy:'title' ">
-            <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
-            <h5 id="title-container">{{product.shopify.title}}</h5>
-            <br>
-            <!-- <a href="#" class="button expanded hollow">Add to Bag</a> -->
-          </div>
+      <div class="row small-up-5">
 
+        <div id="column" class="column" ng-repeat="product in products.all">
+
+          <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
+          <div id="title-container">
+            <h5 id="title-container">{{product.shopify.title | uppercase}}</h5>
+            <h5>£{{product.shopify.variants[0].price}}</h5>
+            <hr>
+            </div>
+          <br>
         </div>
 
       </div>
 
-    </div> <!-- Closing row -->
+    </div>
 
-    <br><br>
+  </div> <!-- Closing row -->
+
+  <br><br>
+
+</main>
 
 
 
