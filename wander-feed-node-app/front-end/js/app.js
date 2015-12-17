@@ -60,6 +60,11 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "cart.html",
       controller: "ProductsController as products"
     })
+    .state('ordercomplete', {
+      url: "/cart/order-complete",
+      templateUrl: "order_complete.html",
+      controller: "ProductsController as products"
+    })
 
   $urlRouterProvider.otherwise("/");
 }

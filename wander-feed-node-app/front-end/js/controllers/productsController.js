@@ -4,13 +4,10 @@ angular
 
 ProductsController.$inject = ["Product", "$http", '$stateParams', '$state', 'cart'];
 
-// DataService
 function ProductsController(Product, $http, $stateParams, $state, cart){
 
   console.log("$stateParams ", $stateParams);
   console.log($state)
-
-
 
   var self              = this;
   self.all              = [];
@@ -19,9 +16,9 @@ function ProductsController(Product, $http, $stateParams, $state, cart){
   self.loadImage        = loadImage;
   self.addToBag         = addToBag;
   var retrievedObject   = localStorage.getItem('items');
-  // items.list.push({title: JSON.parse(retrievedObject).shopify.title, image: JSON.parse(retrievedObject).shopify.image});
   self.shoppingCart     = JSON.parse(retrievedObject)
   self.getTotal = getTotal;
+  self.updateShopifyInventory = updateShopifyInventory
 
   console.log(self.shoppingCart)
 
@@ -29,6 +26,25 @@ function ProductsController(Product, $http, $stateParams, $state, cart){
 
 function getShoppingCart(){
 
+}
+
+function updateShopifyInventory(){
+  console.log("Hello")
+  console.log(self.shoppingCart)
+  for (var i = 0; i < self.shoppingCart.length; i++) {
+    var variantId = self.shoppingCart[i].shopify.variants[self.shoppingCart[i].variant].id
+    var oldInventoryQuantity = self.shoppingCart[i].shopify.variants[self.shoppingCart[i].variant].old_inventory_quantity
+    var newData = {
+      "variant": {
+          "id": variantId,
+          "inventory_quantity": oldInventoryQuantity-1,
+          "old_inventory_quantity": oldInventoryQuantity
+        }
+    }
+    Product.updateShopify({id:variantId}, newData, function(data){
+      console.log(data);
+    } ) 
+  };
 }
 
 // ADD TO BAG 

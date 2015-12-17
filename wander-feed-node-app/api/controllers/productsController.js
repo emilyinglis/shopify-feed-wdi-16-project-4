@@ -44,6 +44,16 @@ function productsDelete(req, res){
 // ------------------------
 
 
+// function productsUpdate(req, res){
+//   var id = req.params.id;
+
+//   Project.findByIdAndUpdate({ _id: id }, req.body.inventory_quantity_adjustment, function(err, inventory_quantity_adjustment){
+//     if (err) return res.status(500).send(err);
+//     if (!inventory_quantity_adjustment) return res.status(404).send(err);
+
+//     res.status(200).send(inventory_quantity_adjustment);
+//   })
+// }
 
 
 

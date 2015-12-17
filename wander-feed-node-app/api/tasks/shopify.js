@@ -22,20 +22,55 @@ request.get(url, function(err, res, body) {
       
       if (localProduct) {
         return console.log("Update goes here...", localProduct)
+
+        // -------
+
+        // 1. get the url to update variant inventory
+
+        // var updateUrl = "https://804c38c7e20539c1d5c856675950afae:50e1fc6bd3d62890b1522441599bd42f@wander-feed.myshopify.com/admin/variants/" + product.variant.id + ".json";
+
+        // request.get(updateUrl, function(err, res, body) {
+
+        //   if (err) return console.log(err);
+
+        // 2. Identify the variant id (from the front end somehow)
+
+        // 3. do a (?):
+
+        // request.put(product.variant.inventory_quantity_adjustment, function(err, res, body){
+        //  variant": {
+        //       "id": product.variant.id,                            
+        //       "inventory_quantity_adjustment": -1
+        //     }
+        // })
+
+        // 4. Save it
+
+        //   updateProduct.save(function(err, shopifyProduct) {
+        //     if (err) return console.log("Error saving: ", err);
+        //     console.log(shopifyProduct.shopify.title + " was updated");
+        //   })
+        // })
+        // ------------------------------------------
         
         // UPDATE INVENTORY WHEN SOLD
 
-        // PUT /admin/variants/#{id}.json
+
+        // From docs:
+
+        // PUT /admin/variants/#{id}.json      --->variant id not product id
         //   {
         //     "variant": {
-        //       "id": 808950810,                            
-        //       "inventory_quantity_adjustment": -5
+        //       "id": 11796977927,                            
+        //       "inventory_quantity_adjustment": -1
         //     }
         // }
 
-        // Example: /admin/variants/808950810.json
+        // Example: https://804c38c7e20539c1d5c856675950afae:50e1fc6bd3d62890b1522441599bd42f@wander-feed.myshopify.com/admin/variants/11796977927.json
 
         }
+
+
       });
 
       var newProduct = new Product();
