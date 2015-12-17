@@ -12,6 +12,7 @@
 <!-- ___________________________________________CATEGORY FILTERS______________________________________ -->
 
 
+<div style="max-width: 100%">
 <main class="cd-main-content">
 
   <div class="cd-tab-filter-wrapper">
@@ -34,7 +35,7 @@
 
   <!-- ___________________________________________PRODUCT GRID______________________________________ -->
 
-  <div class="row">
+  <div id="productsgrid" class="row">
 
     <br><br>
 
@@ -42,7 +43,7 @@
 
       <div class="row small-up-5">
 
-        <div id="column" class="column" ng-repeat="product in products.all">
+        <div ng-repeat="product in products.all">
 
           <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
           <div id="title-container">
@@ -63,6 +64,7 @@
 
 </main>
 
+</div>
 
 
 

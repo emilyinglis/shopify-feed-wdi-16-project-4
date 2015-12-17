@@ -1,5 +1,4 @@
 
-<div id="show-page-styling">
 
   <main class="cd-main-content">
 
@@ -16,34 +15,59 @@
 
     <br>
 
-    <div style="max-width: 90%;" class="row">
-      <div id="details-frame" class="medium-12 large-12 columns">
-        <div class="row small-up-4">
-          <div class="column" ng-repeat="product in products.shoppingCart">
-            <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
-            <div id="title-container">
-              <h5 id="title-container" style="font-size: 15px;">{{product.shopify.title | uppercase}}</h5>
-              <h5>£{{product.shopify.variants[product.variant].price}}</h5>
-              <hr>
-            </div>
+<div id="cart-container">
+      <div id="left-cart">
+        <h1 style="font-weight: 700">I T E M S</h1>
+        <hr style="max-width: 100%">
 
+        <div ng-hide="noItems()" id="cart-column" class="column" ng-repeat="product in products.shoppingCart">
+
+          <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="center-cropped" ng-src="{{product.shopify.image[0].src}}"></a>
+
+          <div id="title-container">
+            <h5 id="title-container" style="font-size: 15px;">{{product.shopify.title | uppercase}}</h5>
+            <h5>{{product.shopify.variants[product.variant].price * 1 | currency:'£' }}</h5>
+            <hr>
           </div>
         </div>
       </div>
-    </div>
+
+
+      <div id="right-cart">
+        <h1 style="font-weight: 700">S U M M A R Y</h1>
+        <hr>
+        <br>
+        <h2 style="font-size: 14px">Subtotal: {{ products.getTotal() | currency:'£' }}</h2>
+        <br>
+        <h2 style="font-size: 14px">Shipping: {{ 4.75 | currency:'£' }}</h2>
+        <br>
+        <hr>
+        <br>
+        <h2>Total: {{ products.getTotal() + 4.75 | currency:'£' }}</h2>
+        <br><br>
+        <button style="text-align: center; width: 100%; height: 50px; background: black; color: white;">C H E C K O U T</button>
+
+
+      </div>
+
+
+</div>
+
+
+    <br>
+
+<!-- 
+        <div style="max-width: 90%;" class="row small-up-4">
+          <div id="details-frame" class="medium-12 large-12 columns">
+            <div class="row small-up-4">
 
 
 
-    <!-- SUGGESTD CODE FOR TOTAL COST -->
-<!-- <div ng-app="myApp" ng-controller="costCtrl">
-
-<input type="number" ng-model="quantity">
-<input type="number" ng-model="price">
-
-<p>Total = {{ (quantity * price) | currency }}</p>
-
-</div> -->
+            </div>
+          </div>
+        </div>
+      -->
 
 
 
-</main>
+    </main>
