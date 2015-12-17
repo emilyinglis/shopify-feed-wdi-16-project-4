@@ -18,86 +18,62 @@
   
   <br><br>
 
-  <div class="row column text-center">
-    <h2>N E W / I N </h2>
-    <hr>
+  <!--   <div class="row column text-center" style="max-width: 100%"> -->
+  <!--     <h2>N E W / I N </h2> -->
+  <!--   <hr>
+</div> -->
+
+<div class="row small-up-2 large-up-4">
+  <div class="column">
+    <a href="#" ui-sref-active="active" ui-sref="tops">
+    <img class="home-images" src="./assets/images/tops-home.png">
+    </a>
+    <h5 class="home-titles">T O P S</h5>
+    <br>
   </div>
-
-  <div class="row small-up-2 large-up-4">
-    <div class="column">
-      <img class="thumbnail" src="./assets/images/tops-home.png">
-      <h5>T O P S</h5>
-      <br>
-      <!--     <a href="#" class="button expanded hollow">T O P S</a> -->
-    </div>
-    <div class="column">
-      <img class="thumbnail" src="./assets/images/accessories-home.png">
-      <h5>A C C E S S O R I E S</h5>
-      <br>
-      <!--  <a href="#" class="button expanded hollow">Buy</a> -->
-    </div>
-    <div class="column">
-      <img class="thumbnail" src="./assets/images/dresses-home.png">
-      <h5>D R E S S E S</h5>
-      <br>
-      <!--   <a href="#" class="button expanded hollow">Buy</a> -->
-    </div>
-    <div class="column">
-      <img class="thumbnail" src="./assets/images/loungwear-home.png">
-      <h5>L O U NG E W E A R</h5>
-      <br>
-      <!--    <a href="#" class="button expanded hollow">Buy</a> -->
-    </div>
+  <div class="column">
+    <a href="#" ui-sref-active="active" ui-sref="accessories">
+    <img class="home-images" src="./assets/images/accessories-home.png">
+    </a>
+    <h5 class="home-titles">A C C E S S O R I E S</h5>
+    <br>
   </div>
-  <hr>
-
-
-  <div class="row column text-center">
-    <h2>M O S T / L O V E D</h2>
-    <hr>
+  <div class="column">
+    <a href="#" ui-sref-active="active" ui-sref="dresses">
+    <img class="home-images" src="./assets/images/dresses-home.png">
+    </a>
+    <h5 class="home-titles">D R E S S E S</h5>
+    <br>
   </div>
-  <div class="row small-up-2 medium-up-3 large-up-6">
-    <div class="column">
-      <img class="thumbnail" src="http://placehold.it/300x400">
-      <h5>Basic White Tee | £35</h5>
-      <br>
-      <a href="#" class="button small expanded hollow">Buy</a>
-    </div>
-    <div class="column">
-      <img class="thumbnail" src="http://placehold.it/300x400">
-      <h5>Basic White Tee | £35</h5>
-      <br>
-      <a href="#" class="button small expanded hollow">Buy</a>
-    </div>
-    <div class="column">
-      <img class="thumbnail" src="http://placehold.it/300x400">
-      <h5>Basic White Tee | £35</h5>
-      <br>
-      <a href="#" class="button small expanded hollow">Buy</a>
-    </div>
-    <div class="column">
-      <img class="thumbnail" src="http://placehold.it/300x400">
-      <h5>Basic White Tee | £35</h5>
-      <br>
-      <a href="#" class="button small expanded hollow">Buy</a>
-    </div>
-    <div class="column">
-      <img class="thumbnail" src="http://placehold.it/300x400">
-      <h5>Basic White Tee | £35</h5>
-      <br>
-      <a href="#" class="button small expanded hollow">Buy</a>
-    </div>
-    <div class="column">
-      <img class="thumbnail" src="http://placehold.it/300x400">
-      <h5>Basic White Tee | £35</h5>
-      <br>
-      <a href="#" class="button small expanded hollow">Buy</a>
-    </div>
+  <div class="column">
+    <a href="#" ui-sref-active="active" ui-sref="loungwear">
+    <img class="home-images" src="./assets/images/loungwear-home.png">
+    </a>
+    <h5 class="home-titles">L O U NG E W E A R</h5>
+    <br>
   </div>
-
-  <hr>
-
 </div>
+
+
+
+<div class="row column text-center new-in-strip">
+<div class="new-in-strip">
+  <h2 style="font-weight: 700">N E W / I N</h2>
+  </div>
+</div>
+
+<br>
+<div class="row small-up-2 medium-up-3 large-up-6">
+
+    <div class="column" ng-repeat="product in products.all | limitTo:7" ng-if="$index > 0">
+      <a href="#" ui-sref-active="active" ui-sref="show({ id: product._id })"><img class="home-new-in-images" ng-src="{{product.shopify.image[0].src}}"></a>
+    </div>
+
+  </div>
+
+  <br>
+
+
 
 
 

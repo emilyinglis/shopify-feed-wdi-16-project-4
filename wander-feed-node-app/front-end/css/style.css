@@ -738,6 +738,45 @@ a:hover {
 }
 
 
+/*Home page*/
+
+.home-images {
+  border: none;
+  box-shadow: 1px 1px 1px rgba(34,34,34,.1);
+  padding: 0px;
+  max-width: 100%;
+}
+
+.home-titles {
+  padding-top: 5%;
+  padding-bottom: 8%;
+  font-weight: 700;
+}
+
+.home-new-in-images {
+  object-fit: cover; /* Do not scale the image */
+  object-position: top; /* Center the image within the element */
+  height: 400px;
+  width: 300px;
+  border: none;
+  box-shadow: 1px 1px 1px rgba(34,34,34,.1);
+  display: inline-block;
+  line-height: 0;
+  max-width: 100%;
+  border-radius: 0;
+  margin-bottom: 1rem;
+}
+
+.new-in-strip {
+  height: 50px;
+  width: 100%;
+  background: black;
+  color: white;
+  line-height: 50px;
+  padding-left: 0px;
+}
+
+
 
 /* SHOW Product Page*/
 
